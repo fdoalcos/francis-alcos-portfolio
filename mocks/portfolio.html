@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Francis Alcos | Portfolio: Code &amp; Feats</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ffffff",
+                        "matte-black": "#0a0a0a",
+                        "background-dark": "#050505",
+                        "neutral-dark": "#121212",
+                        "border-light-gray": "#333333",
+                        "tag-gray": "#1e1e1e",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "mono": ["JetBrains Mono", "monospace"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .grid-pattern {
+            background-image: radial-gradient(circle at 1px 1px, #1a1a1a 1px, transparent 0);
+            background-size: 32px 32px;
+        }
+        .grayscale-img {
+            filter: grayscale(100%) contrast(1.1) brightness(0.7);
+        }
+    </style>
+</head>
+<body class="bg-background-dark text-slate-100 min-h-screen grid-pattern">
+<nav class="sticky top-0 z-50 border-b border-border-light-gray bg-background-dark/95 backdrop-blur-sm">
+<div class="max-w-7xl mx-auto px-8 h-20 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 border border-white flex items-center justify-center group cursor-pointer">
+<span class="text-white font-bold text-lg tracking-tighter">FA</span>
+</div>
+<div class="hidden lg:block">
+<p class="text-[9px] mono text-white/40 uppercase tracking-[0.3em] leading-none mb-1">Status</p>
+<div class="flex items-center gap-2">
+<span class="w-1 h-1 bg-white animate-pulse"></span>
+<span class="text-[9px] mono text-white uppercase tracking-widest">System_Live</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-8 mono text-[10px] tracking-[0.2em] uppercase">
+<a class="text-white/50 hover:text-white transition-colors py-1" href="#">Home</a>
+<a class="text-white/50 hover:text-white transition-colors py-1" href="#">About</a>
+<a class="text-white/50 hover:text-white transition-colors py-1" href="#">Experience</a>
+<a class="text-white border-b border-white py-1" href="#">Portfolio</a>
+<a class="text-white/50 hover:text-white transition-colors py-1" href="#">Mindset</a>
+<a class="ml-4 px-5 py-2 border border-white text-white hover:bg-white hover:text-black transition-all" href="#">Contact</a>
+</div>
+</div>
+</nav>
+<main class="max-w-7xl mx-auto px-8 py-16">
+<section class="mb-16">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-8 border-b border-border-light-gray pb-12">
+<div class="max-w-2xl">
+<h1 class="text-5xl md:text-7xl font-bold tracking-tighter mb-6 leading-none uppercase">Portfolio: <span class="font-light text-white/30">Code &amp; Feats</span></h1>
+<p class="text-slate-400 text-lg font-light leading-relaxed">
+                        A high-density collection of distributed engines, low-level simulations, and scalable architectures engineered for peak computational performance.
+                    </p>
+</div>
+</div>
+</section>
+<section class="mb-12">
+<div class="flex items-center gap-6 mb-12">
+<h2 class="text-sm font-bold tracking-[0.2em] uppercase text-white/80">Technical Repositories</h2>
+<div class="flex-grow h-px bg-border-light-gray/50"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<article class="group border border-border-light-gray bg-matte-black/50 hover:border-white transition-all duration-300">
+<div class="aspect-[16/8] overflow-hidden border-b border-border-light-gray">
+<img alt="Soft Frequency Capping Engine" class="w-full h-full object-cover grayscale-img group-hover:scale-105 group-hover:opacity-90 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPx1fF9QXl2qLrMUWcs0PV7YMF4YdmLSCNqqAU30JsqWiKS_SQbQtFnPmsjTJyWpL-S9yY1XFhR8oNlV1WwhgDOBVwTztMUktuarODpTuzMqK06VE0MO5qMlsuk-lkGmgNsLgw8HdWdbDm5zyV5KlUrqfbnnrgcprLjo5GTxYTwOLkiHg4vxJjCqqBXtFnbhdhtysy_1VRV9Z_nit6POP5zECaTYGi_tDe-bF5QvGCZuWisVkBrv_NzCC5_UPMPaF6w0RzJAZ2hjg"/>
+</div>
+<div class="p-5">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[9px] mono text-white/40 tracking-widest uppercase">01 / ADTECH</span>
+<span class="text-[9px] mono text-white bg-white/10 px-2 py-0.5 tracking-widest uppercase">Scala</span>
+</div>
+<h3 class="text-lg font-bold text-white mb-2 group-hover:translate-x-1 transition-transform">Soft Frequency Capping Engine</h3>
+<p class="text-slate-400 text-xs font-light leading-snug mb-4">
+                            Distributed real-time ad delivery system with sub-millisecond state lookups using Akka and Kafka.
+                        </p>
+<a class="inline-flex items-center gap-2 text-[8px] mono text-white tracking-[0.2em] uppercase opacity-60 hover:opacity-100 transition-opacity" href="#">
+                            View_Specs <span class="material-symbols-outlined text-[12px]">arrow_right_alt</span>
+</a>
+</div>
+</article>
+<article class="group border border-border-light-gray bg-matte-black/50 hover:border-white transition-all duration-300">
+<div class="aspect-[16/8] overflow-hidden border-b border-border-light-gray">
+<img alt="JoeGym SaaS Platform" class="w-full h-full object-cover grayscale-img group-hover:scale-105 group-hover:opacity-90 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_mrrGMwEdYFgUZYjlroP1tZK-vDfjRzWHzr2YgYJt70A0COR485SkqTUPlk1VSls4BU1VQORh9I8XKWapz7fmKumH-IbVn7HWMp6xmdtPVduw2fP6v0EXG3GHM-wnC8fRmnFa0-ZYL7ir4hl0xqRmfFiM3pTit6KV-tBhUsXgMNCVHfP7WSSf-Pu_a2lV4xrLlQhDzcykgTPUflkxL2hjPMR14XlNpCg0J6lUVme7kQlw5dKtGDj6I9b2jRz8Bxs4VavwmtskZBw"/>
+</div>
+<div class="p-5">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[9px] mono text-white/40 tracking-widest uppercase">02 / SAAS</span>
+<span class="text-[9px] mono text-white bg-white/10 px-2 py-0.5 tracking-widest uppercase">Node.js</span>
+</div>
+<h3 class="text-lg font-bold text-white mb-2 group-hover:translate-x-1 transition-transform">JoeGym SaaS Platform</h3>
+<p class="text-slate-400 text-xs font-light leading-snug mb-4">
+                            Scalable fitness infrastructure with automated data synchronization protocols and high-availability design.
+                        </p>
+<a class="inline-flex items-center gap-2 text-[8px] mono text-white tracking-[0.2em] uppercase opacity-60 hover:opacity-100 transition-opacity" href="#">
+                            Deploy_Logs <span class="material-symbols-outlined text-[12px]">arrow_right_alt</span>
+</a>
+</div>
+</article>
+<article class="group border border-border-light-gray bg-matte-black/50 hover:border-white transition-all duration-300">
+<div class="aspect-[16/8] overflow-hidden border-b border-border-light-gray">
+<img alt="Multithreaded Queueing Simulation" class="w-full h-full object-cover grayscale-img group-hover:scale-105 group-hover:opacity-90 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQsZiVRf2isi6oFTPR-j1I7VNuvZT5lJaRiAJ64eQaHpmhVvzpmBNiFai9GcCkAIVc3__jzCpk46_2i3JKZVmPYNxSJQ1ouwtw6szIGxaP7wLUtzf3CPLrdyAruxyTgEZ-f9bCtd8uROrxUcmgbncbpt9ecrbCtTAxZBXYvDkJQx2JnPYUyabLWjdc5Avfd9L0_kL_2HXrrr4cBw6av0OCmAjAc6mZ7qzh9ThP2KyCUy4kN9Shza4hSe3RBX55QeELSYdWAEAHlfU"/>
+</div>
+<div class="p-5">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[9px] mono text-white/40 tracking-widest uppercase">03 / SYSTEMS</span>
+<span class="text-[9px] mono text-white bg-white/10 px-2 py-0.5 tracking-widest uppercase">C / Pthreads</span>
+</div>
+<h3 class="text-lg font-bold text-white mb-2 group-hover:translate-x-1 transition-transform">Multithreaded Queueing Simulation</h3>
+<p class="text-slate-400 text-xs font-light leading-snug mb-4">
+                            Architectural simulation of producer-consumer patterns using POSIX primitives and deadlock prevention.
+                        </p>
+<a class="inline-flex items-center gap-2 text-[8px] mono text-white tracking-[0.2em] uppercase opacity-60 hover:opacity-100 transition-opacity" href="#">
+                            Trace_Code <span class="material-symbols-outlined text-[12px]">arrow_right_alt</span>
+</a>
+</div>
+</article>
+<article class="group border border-border-light-gray bg-matte-black/50 hover:border-white transition-all duration-300">
+<div class="aspect-[16/8] overflow-hidden border-b border-border-light-gray">
+<img alt="Distributed Key-Value Store" class="w-full h-full object-cover grayscale-img group-hover:scale-105 group-hover:opacity-90 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_9YAlhi1-JfDB8JMXLN-K7J7maqaPz4k0z81yj18511QUGpQlm5YAgS9YjV4NdKpErDFCa26Vz10gU7_UK2T5JUE8cAO3Rzv-AzaaH_sQ221C54Ht9tZgHFOcIuRulxlYZO-6DWAIvH3je0YmPbd_qoU7by0YuT8VZ1-8n4XyXiXgEeJZgGRxJQOI2rVY1haqCB2InHUm97IXkPovekRJxr5orMf4dHr2KLRBAY9TfN_-qSbQipUVtNW3FpJYjdGJtYyEmKmXMZI"/>
+</div>
+<div class="p-5">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[9px] mono text-white/40 tracking-widest uppercase">04 / STORAGE</span>
+<span class="text-[9px] mono text-white bg-white/10 px-2 py-0.5 tracking-widest uppercase">Rust</span>
+</div>
+<h3 class="text-lg font-bold text-white mb-2 group-hover:translate-x-1 transition-transform">Distributed Key-Value Store</h3>
+<p class="text-slate-400 text-xs font-light leading-snug mb-4">
+                            Fault-tolerant, eventual consistency storage engine with Raft consensus implementation.
+                        </p>
+<a class="inline-flex items-center gap-2 text-[8px] mono text-white tracking-[0.2em] uppercase opacity-60 hover:opacity-100 transition-opacity" href="#">
+                            Access_Node <span class="material-symbols-outlined text-[12px]">arrow_right_alt</span>
+</a>
+</div>
+</article>
+<article class="group border border-border-light-gray bg-matte-black/50 hover:border-white transition-all duration-300">
+<div class="aspect-[16/8] overflow-hidden border-b border-border-light-gray">
+<img alt="Real-time Ad Auction Engine" class="w-full h-full object-cover grayscale-img group-hover:scale-105 group-hover:opacity-90 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA45TvKrHM2enxvjc5UjgKSnLieHivlrw7gzXPWiLEAzJwOz7pe5J9vtuMglMTWCfpEBtKFjl9XmK08hXOU_QJSiKdXWItDB4SKbIGPWrlP8FDpxA0TR-E-Z1y8IqFe73kBVKWrNHJVJTA2MW88IdnsujCsygKGiKQQh6836P6xBarRgJnjs4c5t3BxaUoARjA5hfTNZtPI4h4W29lZU5Br0MPg00sm62xsGmGvHYFzNINVUrkabjMhqZc2q-whgNyZ7z-wGbQhPCQ"/>
+</div>
+<div class="p-5">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[9px] mono text-white/40 tracking-widest uppercase">05 / TRADING</span>
+<span class="text-[9px] mono text-white bg-white/10 px-2 py-0.5 tracking-widest uppercase">Go</span>
+</div>
+<h3 class="text-lg font-bold text-white mb-2 group-hover:translate-x-1 transition-transform">Real-time Ad Auction Engine</h3>
+<p class="text-slate-400 text-xs font-light leading-snug mb-4">
+                            Ultra-low latency bidding infrastructure processing millions of requests per second.
+                        </p>
+<a class="inline-flex items-center gap-2 text-[8px] mono text-white tracking-[0.2em] uppercase opacity-60 hover:opacity-100 transition-opacity" href="#">
+                            Load_Metrics <span class="material-symbols-outlined text-[12px]">arrow_right_alt</span>
+</a>
+</div>
+</article>
+<div class="border border-border-light-gray/20 border-dashed flex items-center justify-center min-h-[250px]">
+<span class="text-[10px] mono text-white/10 tracking-[0.4em] uppercase">End_Of_Archive</span>
+</div>
+</div>
+</section>
+</main>
+<footer class="mt-20 py-12 border-t border-border-light-gray text-white/40 mono text-[10px] tracking-widest uppercase">
+<div class="max-w-7xl mx-auto px-8 flex justify-between items-center">
+<p>© 2024 FRANCIS ALCOS / PRECISION_ENGINEERING</p>
+<p>REL_1.0.2_DENSITY_ARCHIVE</p>
+</div>
+</footer>
+
+</body></html>

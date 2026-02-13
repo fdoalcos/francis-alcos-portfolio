@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact: Establish Connection | Francis Alcos</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "charcoal": "#0a0a0a",
+                        "console-gray": "#737373",
+                        "border-gray": "#1f1f1f",
+                        "status-green": "#4ade80"
+                    },
+                    fontFamily: {
+                        "mono": ["JetBrains Mono", "monospace"]
+                    }
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        body {
+            font-family: 'JetBrains Mono', monospace;
+            background-color: #0a0a0a;
+        }
+        .nav-link {
+            @apply text-[10px] tracking-[0.2em] uppercase text-console-gray transition-colors duration-300 hover:text-white;
+        }
+        .nav-link.active {
+            @apply text-white;
+            position: relative;
+        }
+        .nav-link.active::after {
+            content: '';
+            @apply absolute -bottom-1 left-0 w-full h-[1px] bg-white;
+        }
+        .terminal-bg {
+            background: linear-gradient(180deg, rgba(31, 31, 31, 0.4) 0%, rgba(10, 10, 10, 0) 100%);
+        }
+        .scanline {
+            width: 100%;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.03);
+            position: absolute;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+        .radar-sweep {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: conic-gradient(from 0deg, transparent 0deg, transparent 270deg, rgba(74, 222, 128, 0.15) 360deg);
+            border-radius: 50%;
+        }
+        .radar-grid-line {
+            @apply absolute bg-white/5;
+        }
+    </style>
+</head>
+<body class="text-white min-h-screen flex flex-col selection:bg-white selection:text-charcoal antialiased">
+<nav class="fixed top-0 left-0 w-full z-50 border-b border-white/5 bg-charcoal/80 backdrop-blur-md">
+<div class="max-w-7xl mx-auto px-6 md:px-12 h-20 flex justify-between items-center">
+<a class="text-lg font-medium tracking-tighter hover:opacity-70 transition-opacity" href="#">
+            FA<span class="text-console-gray">.</span>
+</a>
+<div class="hidden md:flex items-center gap-10">
+<a class="nav-link" href="#">Home</a>
+<a class="nav-link" href="#">About</a>
+<a class="nav-link" href="#">Experience</a>
+<a class="nav-link" href="#">Portfolio</a>
+<a class="nav-link" href="#">Mindset</a>
+<a class="nav-link active" href="#">Contact</a>
+</div>
+<div class="md:hidden text-console-gray">
+<span class="material-symbols-outlined">menu</span>
+</div>
+</div>
+</nav>
+<main class="flex-grow flex flex-col items-start justify-center pt-40 pb-20">
+<div class="max-w-7xl mx-auto px-6 md:px-12 w-full">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
+<div class="flex flex-col h-full">
+<header class="mb-16 w-full">
+<h1 class="text-[11px] uppercase tracking-[0.5em] text-console-gray mb-6">Contact_Interface</h1>
+<h2 class="text-5xl md:text-8xl font-bold leading-tight tracking-tight text-white max-w-4xl uppercase">
+                        CONTACT
+                    </h2>
+<p class="text-console-gray text-sm md:text-base mt-6 max-w-xl font-light leading-relaxed">
+                        Open to thoughtful conversations about backend systems, infrastructure, and scalable software.
+                    </p>
+</header>
+<div class="w-full space-y-1 flex-grow">
+<a class="group flex items-center justify-between py-8 border-b border-border-gray hover:border-white transition-colors" href="mailto:francis@alcos.dev">
+<div class="flex flex-col">
+<span class="text-[10px] text-console-gray uppercase tracking-widest mb-2">email</span>
+<span class="text-2xl font-light text-white/80 group-hover:text-white transition-colors">francis@alcos.dev</span>
+</div>
+<span class="material-symbols-outlined text-console-gray group-hover:text-white group-hover:translate-x-1 transition-all">alternate_email</span>
+</a>
+<a class="group flex items-center justify-between py-8 border-b border-border-gray hover:border-white transition-colors" href="https://github.com/falcos">
+<div class="flex flex-col">
+<span class="text-[10px] text-console-gray uppercase tracking-widest mb-2">github</span>
+<span class="text-2xl font-light text-white/80 group-hover:text-white transition-colors">github.com/falcos</span>
+</div>
+<span class="material-symbols-outlined text-console-gray group-hover:text-white group-hover:translate-x-1 transition-all text-xl">code</span>
+</a>
+<a class="group flex items-center justify-between py-8 border-b border-border-gray hover:border-white transition-colors" href="https://linkedin.com/in/francisalcos">
+<div class="flex flex-col">
+<span class="text-[10px] text-console-gray uppercase tracking-widest mb-2">linkedin</span>
+<span class="text-2xl font-light text-white/80 group-hover:text-white transition-colors">linkedin.com/in/francisalcos</span>
+</div>
+<span class="material-symbols-outlined text-console-gray group-hover:text-white group-hover:translate-x-1 transition-all">north_east</span>
+</a>
+</div>
+</div>
+<div class="hidden lg:flex flex-col items-center justify-center relative">
+<div class="relative w-full aspect-square max-w-lg border border-white/5 bg-white/[0.01] overflow-hidden group">
+<div class="absolute inset-0 p-8 flex flex-col justify-between z-20 pointer-events-none">
+<div class="flex justify-between items-start">
+<div class="text-[10px] text-console-gray uppercase tracking-widest font-mono">
+                                Connection_Visualizer<br/>
+<span class="text-status-green">STATUS: SCANNING...</span>
+</div>
+<div class="text-[10px] text-console-gray uppercase tracking-widest font-mono text-right">
+                                NODE: SF_EDGE_01<br/>
+                                TRACE: ACTIVE
+                            </div>
+</div>
+<div class="flex justify-between items-end">
+<div class="text-[9px] text-console-gray font-mono">
+                                ANGULAR_COORD: 142.4°<br/>
+                                DISTANCE_METRIC: 0.82 AU
+                            </div>
+<div class="text-[10px] text-white/20 font-mono italic">
+                                Ready for a coffee chat.
+                            </div>
+</div>
+</div>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<div class="w-full h-full" style="background-image: linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px); background-size: 20px 20px;"></div>
+</div>
+<div class="relative w-[85%] aspect-square flex items-center justify-center">
+<div class="absolute inset-0 border border-white/10 rounded-full"></div>
+<div class="absolute inset-[12.5%] border border-white/5 rounded-full"></div>
+<div class="absolute inset-[25%] border border-white/10 rounded-full"></div>
+<div class="absolute inset-[37.5%] border border-white/5 rounded-full"></div>
+<div class="absolute inset-[50%] border border-white/10 rounded-full"></div>
+<div class="absolute inset-[62.5%] border border-white/5 rounded-full"></div>
+<div class="absolute inset-[75%] border border-white/10 rounded-full"></div>
+<div class="absolute inset-[87.5%] border border-white/5 rounded-full"></div>
+<div class="absolute w-full h-[0.5px] bg-white/10"></div>
+<div class="absolute h-full w-[0.5px] bg-white/10"></div>
+<div class="absolute w-full h-[0.5px] bg-white/[0.03] rotate-[30deg]"></div>
+<div class="absolute w-full h-[0.5px] bg-white/[0.03] rotate-[60deg]"></div>
+<div class="absolute w-full h-[0.5px] bg-white/[0.03] rotate-[120deg]"></div>
+<div class="absolute w-full h-[0.5px] bg-white/[0.03] rotate-[150deg]"></div>
+<div class="radar-sweep rotate-[-120deg]"></div>
+<div class="absolute top-[22%] right-[28%] flex flex-col items-center">
+<div class="w-2 h-2 bg-status-green rounded-full shadow-[0_0_10px_#4ade80] opacity-80"></div>
+<span class="text-[8px] text-status-green/60 font-mono mt-1">S_01</span>
+</div>
+<div class="absolute bottom-[35%] left-[22%] flex flex-col items-center">
+<div class="w-2.5 h-2.5 bg-status-green rounded-full shadow-[0_0_12px_#4ade80] opacity-60"></div>
+<span class="text-[8px] text-status-green/40 font-mono mt-1">S_02</span>
+</div>
+<div class="absolute top-[65%] right-[18%] flex flex-col items-center">
+<div class="w-1.5 h-1.5 bg-status-green rounded-full shadow-[0_0_8px_#4ade80] opacity-90"></div>
+<span class="text-[8px] text-status-green/70 font-mono mt-1">S_03</span>
+</div>
+<div class="absolute w-2 h-2 bg-white rounded-full z-20 shadow-[0_0_10px_rgba(255,255,255,0.5)]"></div>
+<div class="absolute w-10 h-10 border border-white/20 rounded-full"></div>
+</div>
+</div>
+<div class="scanline"></div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<div class="fixed bottom-0 right-0 p-12 opacity-[0.02] pointer-events-none select-none overflow-hidden -z-10">
+<img alt="Technical Background" class="w-96 h-96 object-contain grayscale invert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGorX6kfx6g029EnXuCSCkKGHO7Y5Aao7Gu9BG94QdCkzeQiNtGqu2jqwlZK4xSavwQNJrWOq_jfKSaG-fkCy3CS90-m5e5aC0jdd-FsAAIqzVITP7vdSGKtibuH1_UJSrZsaHxdM6AlUgHLL2fTIqcdsE7UvjvjIUZ_lC05imO4z-jb2WL-Jf5jofePj6fmkyRw6wM2SjncfPodDreYnc13PoRP33hCZOXSUNhK7n5oTrs0fEd6Upu1M4jPmgb-NlD8wSgbb8-20"/>
+</div>
+<footer class="border-t border-border-gray/50 bg-charcoal/50">
+<div class="max-w-7xl mx-auto px-6 md:px-12 py-12 flex flex-col md:flex-row justify-between items-center gap-6 text-[9px] font-mono tracking-[0.3em] uppercase text-console-gray">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-2">
+<span class="w-1 h-1 bg-white opacity-40"></span>
+                Francis Alcos © 2024
+            </div>
+<div class="hidden md:block">Lat: 37.7749 // Long: -122.4194</div>
+<div class="flex items-center gap-2">
+<div class="w-1.5 h-1.5 rounded-full bg-status-green"></div>
+<span class="text-status-green">System Status: Operational</span>
+</div>
+</div>
+<div class="flex gap-8">
+<span>Optimization: Peak</span>
+<span>Uptime: 100%</span>
+</div>
+</div>
+</footer>
+<div class="hidden" data-location="San Francisco"></div>
+
+</body></html>

@@ -1,0 +1,193 @@
+<html class="dark" lang="en"><head></head><body class="dark:bg-background-dark text-white min-h-screen flex flex-col font-display relative selection:bg-white selection:text-black">```html
+
+
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About: Francis Alcos | Refined Engineering Profile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#D1D1D1",
+                        "charcoal": "#121212",
+                        "background-dark": "#050505",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "mono": ["JetBrains Mono", "monospace"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer base {
+            body {
+                font-family: 'Space Grotesk', sans-serif;
+                -webkit-font-smoothing: antialiased;
+                background-color: #050505;
+            }
+        }
+        .grayscale-grain {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.015;
+            pointer-events: none;
+        }
+        .dashboard-grid {
+            background-size: 30px 30px;
+            background-image: linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
+        }
+    </style>
+
+
+<div class="fixed inset-0 grayscale-grain z-0"></div>
+<header class="w-full max-w-7xl mx-auto px-8 py-12 flex justify-between items-center relative z-50">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-white flex items-center justify-center">
+<span class="text-black font-black text-lg tracking-tighter">FA</span>
+</div>
+</div>
+<nav class="hidden md:flex gap-12 text-[10px] font-bold uppercase tracking-[0.4em] items-center">
+<a class="text-zinc-600 hover:text-white transition-colors" href="#">Home</a>
+<a class="text-white border-b border-white pb-1" href="#">About</a>
+<a class="text-zinc-600 hover:text-white transition-colors" href="#">Experience</a>
+<a class="text-zinc-600 hover:text-white transition-colors" href="#">Portfolio</a>
+<a class="text-zinc-600 hover:text-white transition-colors" href="#">Mindset</a>
+<a class="text-zinc-600 hover:text-white transition-colors" href="#">Contact</a>
+</nav>
+<button class="md:hidden text-white">
+<span class="material-icons">menu</span>
+</button>
+</header>
+<main class="flex-grow flex items-center relative z-10 overflow-hidden">
+<div class="w-full max-w-7xl mx-auto px-8 py-12 md:py-24">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+<div class="lg:col-span-6 space-y-12">
+<div class="space-y-4">
+<span class="font-mono text-[10px] uppercase tracking-[0.5em] text-zinc-500 block">About</span>
+<h1 class="text-5xl md:text-7xl font-bold tracking-tighter text-white">Hey, I’m Francis!</h1>
+</div>
+<div class="space-y-12">
+<p class="text-zinc-300 text-xl md:text-2xl leading-relaxed font-light max-w-2xl">
+                            I am a software engineer driven by deep curiosity and architectural precision. I enjoy learning how complex systems work from the ground up, focusing on the beauty of efficient backends, the resilience of distributed systems, and the absolute necessity of reliability.
+                        </p>
+<p class="text-zinc-500 text-xl md:text-2xl leading-relaxed font-light max-w-2xl">
+                            Outside of the terminal, this discipline translates into endurance. As a triathlete and ultra-marathoner, I find parity between long-form code optimization and hundred-mile trails. Both require a calm mind, sustained output, and a deep respect for the mechanics of a high-performance system.
+                        </p>
+</div>
+</div>
+<div class="lg:col-span-6 relative">
+<div class="border border-zinc-800 bg-zinc-900/10 backdrop-blur-md p-1">
+<div class="border border-zinc-800 p-8 dashboard-grid relative overflow-hidden">
+<div class="flex justify-between items-center border-b border-zinc-800 pb-6 mb-8">
+<div class="flex gap-2">
+<div class="w-2.5 h-2.5 rounded-full bg-zinc-700"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-zinc-800"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-zinc-900"></div>
+</div>
+<span class="font-mono text-[9px] uppercase tracking-[0.3em] text-zinc-500">profile.sys_manifest v2.2.0</span>
+</div>
+<div class="space-y-10 font-mono">
+<div class="space-y-2">
+<span class="text-[10px] text-white font-bold tracking-widest uppercase flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-white"></span> ROLE
+                                    </span>
+<p class="text-[13px] text-zinc-400 pl-4 border-l border-zinc-800">Backend Infrastructure Engineer</p>
+</div>
+<div class="space-y-3">
+<span class="text-[10px] text-white font-bold tracking-widest uppercase flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-white"></span> ENGINEERING
+                                    </span>
+<ul class="text-[12px] text-zinc-400 pl-4 space-y-2 list-none border-l border-zinc-800">
+<li class="flex items-center gap-2">
+<span class="text-[8px] text-zinc-600">■</span> Backend Systems
+                                        </li>
+<li class="flex items-center gap-2">
+<span class="text-[8px] text-zinc-600">■</span> Distributed Infrastructure
+                                        </li>
+<li class="flex items-center gap-2">
+<span class="text-[8px] text-zinc-600">■</span> Data-Intensive Applications
+                                        </li>
+<li class="flex items-center gap-2">
+<span class="text-[8px] text-zinc-600">■</span> Performance Optimization
+                                        </li>
+</ul>
+</div>
+<div class="space-y-3">
+<span class="text-[10px] text-white font-bold tracking-widest uppercase flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-white"></span> LEARNING
+                                    </span>
+<ul class="text-[12px] text-zinc-400 pl-4 space-y-1.5 list-none border-l border-zinc-800">
+<li>Studying system tradeoffs</li>
+<li>Distributed consistency models</li>
+<li>Optimization patterns</li>
+</ul>
+</div>
+<div class="space-y-3">
+<span class="text-[10px] text-white font-bold tracking-widest uppercase flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-white"></span> OFF-CLOCK
+                                    </span>
+<ul class="text-[12px] text-zinc-400 pl-4 space-y-1.5 list-none border-l border-zinc-800">
+<li>Endurance running</li>
+<li>Strength progression</li>
+<li>Reading &amp; reflection</li>
+</ul>
+</div>
+<div class="space-y-3">
+<span class="text-[10px] text-white font-bold tracking-widest uppercase flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-white"></span> PRINCIPLES
+                                    </span>
+<div class="pl-4 border-l border-zinc-800 flex flex-wrap gap-x-4 gap-y-2">
+<span class="text-[11px] text-zinc-400 border border-zinc-800 px-2 py-0.5">Build for reliability</span>
+<span class="text-[11px] text-zinc-400 border border-zinc-800 px-2 py-0.5">Prefer clarity</span>
+<span class="text-[11px] text-zinc-400 border border-zinc-800 px-2 py-0.5">Improve incrementally</span>
+<span class="text-[11px] text-zinc-400 border border-zinc-800 px-2 py-0.5">Think long-term</span>
+</div>
+</div>
+</div>
+<div class="mt-12 pt-6 border-t border-zinc-800/50 font-mono text-[9px] text-zinc-600 flex justify-between items-center uppercase tracking-tighter">
+<span>Status: operational</span>
+<span>Region: us-west-2</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="w-full max-w-7xl mx-auto px-8 py-16 border-t border-zinc-900/50 relative z-10">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
+<div class="flex flex-wrap gap-8 md:gap-16">
+<div class="space-y-1">
+<p class="text-[9px] text-zinc-600 uppercase tracking-[0.3em] font-black">Discipline</p>
+<p class="text-lg font-medium tracking-tight text-zinc-300">Software Engineering</p>
+</div>
+<div class="space-y-1">
+<p class="text-[9px] text-zinc-600 uppercase tracking-[0.3em] font-black">Focus</p>
+<p class="text-lg font-medium tracking-tight text-zinc-300">Backend Systems</p>
+</div>
+<div class="space-y-1">
+<p class="text-[9px] text-zinc-600 uppercase tracking-[0.3em] font-black">Parallel</p>
+<p class="text-lg font-medium tracking-tight text-zinc-300">Endurance Sports</p>
+</div>
+</div>
+<div class="text-[10px] text-zinc-700 font-bold uppercase tracking-[0.4em]">
+                © 2024 F. Alcos / System 1.0
+            </div>
+</div>
+</footer>
+
+</body></html>

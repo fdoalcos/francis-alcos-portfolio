@@ -1,0 +1,221 @@
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Experience: Engineering History | Francis Alcos</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ffffff",
+                        "accent": "#94a3b8",
+                        "background-dark": "#0a0a0a",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "mono": ["JetBrains Mono", "monospace"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .grid-pattern {
+            background-image: radial-gradient(#ffffff 0.5px, transparent 0.5px);
+            background-size: 32px 32px;
+            opacity: 0.05;
+        }
+        .nav-link {
+            @apply text-[10px] font-mono tracking-[0.2em] uppercase transition-all duration-300;
+        }
+        .nav-link-active {
+            @apply text-white border-b border-white;
+        }
+        .nav-link-inactive {
+            @apply text-slate-500 hover:text-white;
+        }
+        .timeline-line {
+            background: linear-gradient(to bottom, transparent 0%, #334155 10%, #334155 90%, transparent 100%);
+        }
+    </style>
+</head>
+<body class="bg-background-dark text-slate-400 font-display selection:bg-white selection:text-black">
+<div class="fixed inset-0 grid-pattern pointer-events-none"></div>
+<nav class="fixed top-0 left-0 right-0 z-[100] border-b border-white/10 bg-background-dark/80 backdrop-blur-md">
+<div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+<a class="flex items-center gap-2 group" href="#">
+<div class="w-8 h-8 border border-white flex items-center justify-center group-hover:bg-white transition-colors">
+<span class="text-xs font-bold text-white group-hover:text-black font-mono">FA</span>
+</div>
+</a>
+<div class="hidden md:flex items-center gap-8">
+<a class="nav-link nav-link-inactive" href="#">Overview</a>
+<a class="nav-link nav-link-active pb-1" href="#">Experience</a>
+<a class="nav-link nav-link-inactive" href="#">Systems</a>
+<a class="nav-link nav-link-inactive" href="#">Principles</a>
+<a class="nav-link nav-link-inactive" href="#">Contact</a>
+</div>
+<div class="md:hidden">
+<span class="material-symbols-outlined text-white">menu</span>
+</div>
+</div>
+</nav>
+<main class="relative min-h-screen max-w-5xl mx-auto px-6 pt-32 pb-24">
+<header class="mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8 border-b border-white/10 pb-12 relative z-10">
+<div>
+<div class="flex items-center gap-2 mb-4">
+<span class="w-2 h-2 bg-white"></span>
+<span class="text-[10px] font-mono tracking-widest text-white uppercase">Archive // Engineering_History_v2.0</span>
+</div>
+<h1 class="text-5xl md:text-7xl font-bold text-white mb-4 tracking-tighter uppercase">
+                    Experience: <span class="text-slate-500 font-light italic">Parallel Growth</span>
+</h1>
+<p class="max-w-xl text-lg text-slate-400 font-light leading-relaxed font-mono text-sm uppercase">
+                    Systematic record of professional technical contributions and architectural deployments.
+                </p>
+</div>
+</header>
+<section class="relative pl-8 md:pl-48">
+<div class="absolute left-0 md:left-40 top-0 bottom-0 w-px timeline-line opacity-30"></div>
+<div class="relative mb-24 group">
+<div class="absolute -left-[33px] md:-left-[9px] top-1.5 w-4 h-4 bg-background-dark border border-white rotate-45 z-10"></div>
+<div class="flex flex-col md:flex-row md:items-baseline gap-1 md:gap-4 mb-4">
+<span class="text-[10px] font-mono text-slate-500 uppercase tracking-widest min-w-[140px] md:absolute md:-left-52 md:text-right">2026 — Present</span>
+<h2 class="text-2xl font-bold text-white uppercase tracking-tight font-mono">Datadog</h2>
+</div>
+<div class="text-slate-200 font-mono text-xs uppercase mb-6 tracking-widest">Software Engineer</div>
+<ul class="space-y-4 max-w-2xl font-mono text-[11px] text-slate-400 leading-relaxed uppercase">
+<li class="flex gap-4">
+<span class="text-slate-600 shrink-0">01</span>
+<span>Architecting high-scale observability platforms and distributed data pipelines.</span>
+</li>
+<li class="flex gap-4">
+<span class="text-slate-600 shrink-0">02</span>
+<span>Optimization of backend services for global monitoring infrastructure.</span>
+</li>
+</ul>
+</div>
+<div class="relative mb-24 group">
+<div class="absolute -left-[33px] md:-left-[9px] top-1.5 w-4 h-4 bg-background-dark border border-slate-700 rotate-45 z-10"></div>
+<div class="flex flex-col md:flex-row md:items-baseline gap-1 md:gap-4 mb-4">
+<span class="text-[10px] font-mono text-slate-500 uppercase tracking-widest min-w-[140px] md:absolute md:-left-52 md:text-right">SUMMER 2025</span>
+<h2 class="text-2xl font-bold text-white uppercase tracking-tight font-mono">LinkedIn</h2>
+</div>
+<div class="text-slate-200 font-mono text-xs uppercase mb-6 tracking-widest">Software Engineer Intern, Backend Infrastructure</div>
+<ul class="space-y-4 max-w-2xl font-mono text-[11px] text-slate-400 leading-relaxed uppercase">
+<li class="flex gap-4">
+<span class="text-slate-600 shrink-0">01</span>
+<span>Engineered core infrastructure services to support platform scalability and low-latency data retrieval.</span>
+</li>
+<li class="flex gap-4">
+<span class="text-slate-600 shrink-0">02</span>
+<span>Implemented performance monitoring tools for distributed system health and resource allocation.</span>
+</li>
+</ul>
+</div>
+<div class="relative mb-24 group">
+<div class="absolute -left-[33px] md:-left-[9px] top-1.5 w-4 h-4 bg-background-dark border border-slate-700 rotate-45 z-10"></div>
+<div class="flex flex-col md:flex-row md:items-baseline gap-1 md:gap-4 mb-4">
+<span class="text-[10px] font-mono text-slate-500 uppercase tracking-widest min-w-[140px] md:absolute md:-left-52 md:text-right">SUMMER 2024</span>
+<h2 class="text-2xl font-bold text-white uppercase tracking-tight font-mono">LinkedIn</h2>
+</div>
+<div class="text-slate-200 font-mono text-xs uppercase mb-6 tracking-widest">Software Engineer Intern, Ad Formats</div>
+<ul class="space-y-4 max-w-2xl font-mono text-[11px] text-slate-400 leading-relaxed uppercase">
+<li class="flex gap-4">
+<span class="text-slate-600 shrink-0">01</span>
+<span>Developed high-performance rendering engines for diverse advertisement formats across web and mobile.</span>
+</li>
+<li class="flex gap-4">
+<span class="text-slate-600 shrink-0">02</span>
+<span>Leveraged internal frameworks to streamline ad delivery and maximize engagement metrics.</span>
+</li>
+</ul>
+</div>
+<div class="relative mb-24 group">
+<div class="absolute -left-[33px] md:-left-[9px] top-1.5 w-4 h-4 bg-background-dark border border-slate-800 rotate-45 z-10"></div>
+<div class="flex flex-col md:flex-row md:items-baseline gap-1 md:gap-4 mb-4">
+<span class="text-[10px] font-mono text-slate-500 uppercase tracking-widest min-w-[140px] md:absolute md:-left-52 md:text-right">2023</span>
+<h2 class="text-2xl font-bold text-white uppercase tracking-tight font-mono">Liberty Mutual</h2>
+</div>
+<div class="text-slate-200 font-mono text-xs uppercase mb-6 tracking-widest">Software Engineering Intern</div>
+<ul class="space-y-4 max-w-2xl font-mono text-[11px] text-slate-400 leading-relaxed uppercase">
+<li class="flex gap-4">
+<span class="text-slate-600 shrink-0">01</span>
+<span>Automated internal reporting workflows utilizing enterprise cloud infrastructure and Java services.</span>
+</li>
+<li class="flex gap-4">
+<span class="text-slate-600 shrink-0">02</span>
+<span>Optimized database queries for large-scale insurance claim processing systems.</span>
+</li>
+</ul>
+</div>
+<div class="relative mb-24 group">
+<div class="absolute -left-[33px] md:-left-[9px] top-1.5 w-4 h-4 bg-background-dark border border-slate-900 rotate-45 z-10"></div>
+<div class="flex flex-col md:flex-row md:items-baseline gap-1 md:gap-4 mb-4">
+<span class="text-[10px] font-mono text-slate-500 uppercase tracking-widest min-w-[140px] md:absolute md:-left-52 md:text-right">2023 — 2024</span>
+<h2 class="text-2xl font-bold text-white uppercase tracking-tight font-mono">UMass Boston</h2>
+</div>
+<div class="text-slate-200 font-mono text-xs uppercase mb-6 tracking-widest">Course Assistant, Computer Science</div>
+<ul class="space-y-4 max-w-2xl font-mono text-[11px] text-slate-400 leading-relaxed uppercase">
+<li class="flex gap-4">
+<span class="text-slate-600 shrink-0">01</span>
+<span>Facilitated technical labs in Data Structures and Algorithms for undergraduate students.</span>
+</li>
+<li class="flex gap-4">
+<span class="text-slate-600 shrink-0">02</span>
+<span>Conducted code reviews and provided architectural guidance for complex software projects.</span>
+</li>
+</ul>
+</div>
+<div class="relative mb-24 group">
+<div class="absolute -left-[33px] md:-left-[9px] top-1.5 w-4 h-4 bg-background-dark border border-slate-900 rotate-45 z-10"></div>
+<div class="flex flex-col md:flex-row md:items-baseline gap-1 md:gap-4 mb-4">
+<span class="text-[10px] font-mono text-slate-500 uppercase tracking-widest min-w-[140px] md:absolute md:-left-52 md:text-right">2022 — 2023</span>
+<h2 class="text-2xl font-bold text-white uppercase tracking-tight leading-none font-mono">Software Verification Lab</h2>
+</div>
+<div class="text-slate-200 font-mono text-xs uppercase mb-6 tracking-widest">Research Assistant</div>
+<ul class="space-y-4 max-w-2xl font-mono text-[11px] text-slate-400 leading-relaxed uppercase">
+<li class="flex gap-4">
+<span class="text-slate-600 shrink-0">01</span>
+<span>Investigated formal methods for system security and memory-safe program execution.</span>
+</li>
+<li class="flex gap-4">
+<span class="text-slate-600 shrink-0">02</span>
+<span>Developed automated testing suites using LLVM and static analysis tools.</span>
+</li>
+</ul>
+</div>
+</section>
+<div class="mt-24 border-t border-white/5"></div>
+<div class="fixed bottom-0 left-0 right-0 bg-background-dark/95 backdrop-blur-md border-t border-white/10 py-3 px-6 flex justify-between items-center z-50">
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-white"></span>
+<span class="text-[9px] font-mono uppercase text-white tracking-widest">System Online</span>
+</div>
+<div class="hidden md:flex items-center gap-1.5 border-l border-white/10 pl-6">
+<span class="text-[9px] font-mono uppercase text-slate-500 tracking-widest">Path: /home/alcos/experience</span>
+</div>
+</div>
+<div class="text-[9px] font-mono uppercase text-slate-500 tracking-[0.3em]">
+                Code is the ultimate endurance sport
+            </div>
+</div>
+</main>
+
+</body></html>

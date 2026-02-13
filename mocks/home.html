@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About: Francis Alcos | Minimal Narrative</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@300;400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#D1D1D1",
+                        "charcoal": "#121212",
+                        "background-dark": "#050505",
+                        "ascii-gray": "#1A1A1A"
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "mono": ["JetBrains Mono", "monospace"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer base {
+            body {
+                font-family: 'Space Grotesk', sans-serif;
+                -webkit-font-smoothing: antialiased;
+                background-color: #050505;
+            }
+        }
+        .grayscale-grain {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.015;
+            pointer-events: none;
+        }
+        .ascii-background {
+            font-family: 'JetBrains Mono', monospace;
+            line-height: 1.1;
+            font-size: 11px;
+            user-select: none;
+            color: #1A1A1A;
+            white-space: pre;
+            mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
+            -webkit-mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
+        }
+    </style>
+</head>
+<body class="dark:bg-background-dark text-white min-h-screen flex flex-col font-display relative selection:bg-white selection:text-black">
+<div class="fixed inset-0 grayscale-grain z-0"></div>
+<div class="fixed inset-0 flex items-center justify-center overflow-hidden pointer-events-none z-0 opacity-80">
+<pre class="ascii-background opacity-40">0x1A2B3C  0x4D5E6F  0x7G8H9I  0x0J1K2L  0x3M4N5O  0x6P7Q8R  0x9S0T1U  0x2V3W4X  0x5Y6Z7A  0x8B9C0D
+0x SYSTEM_NULL_POINTER_VOID  // HUMAN_SYSTEM_01010101  // ARCHITECTURE_STABILITY_INDEX_99.9%
+                      _..._
+                    .'     '.
+                   /         \
+                  |           |
+                  |  0  0  0  |  0xFFFFFF
+                  \     _     /  0x121212
+                   '.  -=-  .'   0x050505
+                 ___/  '---'  \___
+              .-'                 '-.
+             /     .           .     \
+            /     / \         / \     \
+           |     |   |       |   |     |
+           |     |   |       |   |     |
+           |     |   |       |   |     |
+           |     |   |       |   |     |
+           \     \   /       \   /     /
+            \     \ /         \ /     /
+             '.    '           '    .'
+               '--.             .--'
+                  |      |      |
+                  |      |      |
+                  |      |      |
+                  |      |      |
+                  |      |      |
+                  |      |      |
+                  |______|______|
+                  |      |      |
+                  |      |      |
+                  |      |      |
+                  |      |      |
+                  |      |      |
+                  |      |      |
+                  |      |      |
+                  |______|______|
+                 (_______|_______)
+0x1A2B3C  0x4D5E6F  0x7G8H9I  0x0J1K2L  0x3M4N5O  0x6P7Q8R  0x9S0T1U  0x2V3W4X  0x5Y6Z7A  0x8B9C0D
+MEMORY_MAPPING_BLOCK_A [::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::] 100%
+LOAD_AVG [0.05, 0.02, 0.01] // RUNTIME_STABILITY_OPTIMIZED // ENDURANCE_THRESHOLD_REACHED
+        </pre>
+</div>
+<header class="w-full max-w-7xl mx-auto px-8 py-12 flex justify-between items-center relative z-50">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-white flex items-center justify-center">
+<span class="text-black font-black text-lg tracking-tighter">FA</span>
+</div>
+</div>
+<nav class="hidden md:flex gap-12 text-[10px] font-bold uppercase tracking-[0.4em] items-center">
+<a class="text-zinc-600 hover:text-white transition-colors" href="#">Home</a>
+<a class="text-white border-b border-white pb-1" href="#">About</a>
+<a class="text-zinc-600 hover:text-white transition-colors" href="#">Experience</a>
+<a class="text-zinc-600 hover:text-white transition-colors" href="#">Portfolio</a>
+<a class="text-zinc-600 hover:text-white transition-colors" href="#">Mindset</a>
+<a class="text-zinc-600 hover:text-white transition-colors" href="#">Contact</a>
+</nav>
+<button class="md:hidden text-white">
+<span class="material-icons">menu</span>
+</button>
+</header>
+<main class="flex-grow flex items-center px-8 py-24 relative z-10">
+<div class="max-w-4xl mx-auto w-full">
+<div class="mb-12">
+<h1 class="text-5xl md:text-7xl font-bold tracking-tighter text-white">Hey, I’m Francis!</h1>
+</div>
+<div class="space-y-12">
+<p class="text-zinc-300 text-xl md:text-2xl leading-relaxed font-light max-w-3xl backdrop-blur-sm bg-background-dark/10">
+                    I am a software engineer driven by deep curiosity and architectural precision. I enjoy learning how complex systems work from the ground up, focusing on the beauty of efficient backends, the resilience of distributed systems, and the absolute necessity of reliability. To me, code is more than logic; it is a structure built to withstand the pressures of scale and time.
+                </p>
+<p class="text-zinc-500 text-xl md:text-2xl leading-relaxed font-light max-w-3xl backdrop-blur-sm bg-background-dark/10">
+                    Outside of the terminal, this discipline translates into endurance. As a triathlete and ultra-marathoner, I find parity between long-form code optimization and hundred-mile trails. Both require a calm mind, sustained output, and a deep respect for the mechanics of a high-performance system.
+                </p>
+</div>
+</div>
+</main>
+<footer class="w-full max-w-7xl mx-auto px-8 py-16 border-t border-zinc-900/50 relative z-10 bg-background-dark/50 backdrop-blur-md">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
+<div class="flex gap-16">
+<div class="space-y-1">
+<p class="text-[9px] text-zinc-600 uppercase tracking-[0.3em] font-black">Discipline</p>
+<p class="text-lg font-medium tracking-tight text-zinc-300">Software Engineering</p>
+</div>
+<div class="space-y-1">
+<p class="text-[9px] text-zinc-600 uppercase tracking-[0.3em] font-black">Focus</p>
+<p class="text-lg font-medium tracking-tight text-zinc-300">Backend Systems</p>
+</div>
+<div class="space-y-1">
+<p class="text-[9px] text-zinc-600 uppercase tracking-[0.3em] font-black">Parallel</p>
+<p class="text-lg font-medium tracking-tight text-zinc-300">Endurance Sports</p>
+</div>
+</div>
+<div class="text-[10px] text-zinc-700 font-bold uppercase tracking-[0.4em]">
+                © 2024 F. Alcos / System 1.0
+            </div>
+</div>
+</footer>
+
+</body></html>
