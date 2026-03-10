@@ -29,7 +29,7 @@ export default function About() {
           </div>
 
           {/* Right dashboard */}
-          <div className="lg:col-span-6 relative">
+          <div className="lg:col-span-6 relative lg:sticky lg:top-24 lg:self-start">
             <div className="border border-zinc-800 bg-zinc-900/10 backdrop-blur-md p-1">
               <div className="border border-zinc-800 p-8 dashboard-grid relative overflow-hidden">
                 <div className="flex justify-between items-center border-b border-zinc-800 pb-6 mb-8">
@@ -110,7 +110,7 @@ export default function About() {
 
                 <div className="mt-12 pt-6 border-t border-zinc-800/50 font-mono text-[9px] text-zinc-600 flex justify-between items-center uppercase tracking-tighter">
                   <span>Status: operational</span>
-                  <span>Region: us-west-2</span>
+                  <span>Region: us-east-1</span>
                 </div>
               </div>
             </div>

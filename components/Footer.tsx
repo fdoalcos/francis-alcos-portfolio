@@ -20,7 +20,10 @@ export default function Footer() {
       <div className="w-full px-4 md:px-6 py-3">
         <div className="flex items-center justify-between gap-6">
           <div className="flex items-center gap-3 text-[9px] font-mono tracking-[0.3em] uppercase whitespace-nowrap">
-            <span className="w-1.5 h-1.5 bg-status-green rounded-full" />
+            <span className="relative flex w-1.5 h-1.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-status-green opacity-60"></span>
+              <span className="relative inline-flex rounded-full w-1.5 h-1.5 bg-status-green"></span>
+            </span>
             <span className="text-status-green">SYSTEM ONLINE</span>
             <span className="text-console-gray/60">|</span>
             <span className="text-console-gray">PATH: /ALCOS/{currentPath}</span>

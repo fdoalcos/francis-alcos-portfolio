@@ -46,7 +46,7 @@ export default function Home() {
         <div className="inline-block mb-6 px-4 py-1.5 border border-accent-charcoal text-[10px] font-bold tracking-[0.5em] uppercase text-accent-light">
           SOFTWARE ENGINEER
         </div>
-        <h1 className="text-7xl md:text-9xl font-bold tracking-tighter text-white mb-8 leading-none">
+        <h1 className="text-[clamp(3.5rem,9vw,8rem)] font-bold tracking-tighter text-white mb-8 leading-none">
           Francis Alcos
         </h1>
         <p className="max-w-2xl mx-auto text-base md:text-xl text-accent-gray font-light leading-relaxed tracking-wide">

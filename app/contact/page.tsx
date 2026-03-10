@@ -79,7 +79,7 @@ export default function Contact() {
 
               <a
                 className="group flex items-center justify-between py-8 border-b border-border-gray hover:border-white transition-colors"
-                href="https://github.com/falcos"
+                href="https://github.com/fdoalcos"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -88,7 +88,7 @@ export default function Contact() {
                     github
                   </span>
                   <span className="text-2xl font-light text-white/80 group-hover:text-white transition-colors font-mono">
-                    github.com/falcos
+                    github.com/fdoalcos
                   </span>
                 </div>
                 <span className="text-console-gray group-hover:text-white group-hover:translate-x-1 transition-all">

@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Francis Alcos — Portfolio Redesign Prototype</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:       #050505;
+    --surface:  #0a0a0a;
+    --surface2: #111111;
+    --border:   #1f1f1f;
+    --border2:  #2a2a2a;
+    --white:    #ffffff;
+    --muted:    #737373;
+    --slate:    #94a3b8;
+    --green:    #19de23;
+    --mono:     'JetBrains Mono', monospace;
+    --sans:     'Space Grotesk', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: var(--sans);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* ── GRID TEXTURE ── */
+  .grid-bg {
+    position: fixed; inset: 0; pointer-events: none; z-index: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    height: 72px;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 48px;
+    background: rgba(5,5,5,.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: var(--mono);
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--white);
+    text-decoration: none;
+    letter-spacing: -.02em;
+  }
+  .nav-logo span { color: var(--muted); }
+
+  .nav-links { display: flex; gap: 36px; }
+
+  .nav-links a {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    position: relative;
+    transition: color .2s;
+  }
+  .nav-links a:hover { color: var(--white); }
+  .nav-links a.active {
+    color: var(--white);
+  }
+  /* Green underline for active — the main redesign suggestion */
+  .nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -4px; left: 0; right: 0;
+    height: 1px;
+    background: var(--green);
+  }
+
+  /* ── FOOTER STATUS BAR ── */
+  footer {
+    position: fixed; bottom: 0; left: 0; right: 0; z-index: 100;
+    height: 36px;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 48px;
+    background: var(--bg);
+    border-top: 1px solid var(--border);
+    font-family: var(--mono);
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: .3em;
+  }
+
+  .status-left { display: flex; align-items: center; gap: 10px; }
+  .status-dot {
+    width: 6px; height: 6px;
+    background: var(--green);
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%,100% { opacity: 1; box-shadow: 0 0 0 0 rgba(25,222,35,.4); }
+    50%      { opacity: .8; box-shadow: 0 0 0 4px rgba(25,222,35,0); }
+  }
+  .status-online { color: var(--green); }
+  .status-path   { color: var(--muted); }
+  .status-tagline { color: var(--muted); font-size: 8px; }
+
+  /* ── PAGES ── */
+  .page {
+    min-height: 100vh;
+    padding: 120px 48px 80px;
+    position: relative; z-index: 1;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* ── HOME ── */
+  #home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .home-side {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: var(--mono);
+    font-size: 9px;
+    line-height: 2;
+    color: var(--muted);
+  }
+  .home-side.left  { left: 40px; text-align: left; }
+  .home-side.right { right: 40px; text-align: right; }
+  .home-side .val  { color: var(--white); font-weight: 500; }
+  .home-side .label { font-size: 8px; text-transform: uppercase; letter-spacing: .25em; font-weight: 700; }
+
+  .home-inner { max-width: 900px; }
+
+  .kicker {
+    display: inline-block;
+    margin-bottom: 28px;
+    padding: 6px 16px;
+    border: 1px solid var(--border2);
+    font-family: var(--mono);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .5em;
+    text-transform: uppercase;
+    color: var(--slate);
+  }
+
+  .hero-name {
+    font-size: clamp(3.5rem, 9vw, 8rem);
+    font-weight: 700;
+    letter-spacing: -.04em;
+    line-height: 1;
+    color: var(--white);
+    margin-bottom: 32px;
+    /* FIX: added clamp() for responsiveness */
+  }
+
+  .hero-sub {
+    max-width: 560px;
+    margin: 0 auto 48px;
+    font-size: 18px;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+  .hero-sub strong { color: var(--white); font-weight: 400; }
+
+  /* Scrolling tags */
+  .tags-track {
+    overflow: hidden;
+    width: 100%;
+    padding: 20px 0;
+    mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+  }
+  .tags-inner {
+    display: flex;
+    width: max-content;
+    animation: scroll 35s linear infinite;
+    gap: 0;
+  }
+  @keyframes scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+  .tag {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .2em;
+    padding: 0 28px;
+    white-space: nowrap;
+    border-right: 1px solid var(--border2);
+  }
+  /* FIX: alternate tag colors for rhythm */
+  .tag.tech  { color: var(--white); }
+  .tag.other { color: var(--muted); }
+
+  /* ── EXPERIENCE ── */
+  #experience { max-width: 1200px; margin: 0 auto; }
+
+  .section-header {
+    margin-bottom: 64px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid var(--border);
+  }
+  .section-header h1 {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 700;
+    letter-spacing: -.04em;
+    text-transform: uppercase;
+  }
+  .section-sub {
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--slate);
+    margin-top: 16px;
+    max-width: 520px;
+    line-height: 1.7;
+  }
+
+  .timeline { position: relative; padding-left: 220px; }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 180px; top: 0; bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, var(--border2) 10%, var(--border2) 90%, transparent);
+  }
+
+  .exp-item { position: relative; margin-bottom: 72px; }
+
+  .exp-period {
+    position: absolute;
+    left: -220px;
+    top: 6px;
+    width: 160px;
+    text-align: right;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* Timeline dot */
+  .exp-item::before {
+    content: '';
+    position: absolute;
+    left: -42px;
+    top: 10px;
+    width: 5px; height: 5px;
+    background: var(--border2);
+    border-radius: 50%;
+    transition: background .2s;
+  }
+  .exp-item:hover::before { background: var(--green); }
+
+  .exp-header { display: flex; align-items: center; gap: 16px; margin-bottom: 8px; }
+
+  .exp-logo {
+    width: 32px; height: 32px;
+    object-fit: contain;
+    filter: grayscale(1) brightness(.7);
+    flex-shrink: 0;
+    transition: filter .2s;
+  }
+  .exp-item:hover .exp-logo { filter: grayscale(0) brightness(1); }
+
+  .exp-company {
+    font-family: var(--mono);
+    font-size: 22px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -.01em;
+    color: var(--white);
+  }
+
+  /* FIX: role badge to differentiate duplicate company names */
+  .exp-role-badge {
+    display: inline-block;
+    margin-bottom: 20px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--slate);
+    text-transform: uppercase;
+    letter-spacing: .15em;
+    padding: 3px 8px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+  }
+  /* Highlight current/most recent role */
+  .exp-item.current .exp-role-badge {
+    border-color: rgba(25,222,35,.3);
+    color: rgba(25,222,35,.8);
+  }
+
+  .exp-bullets { list-style: none; max-width: 640px; }
+  .exp-bullets li {
+    display: flex;
+    gap: 20px;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.7;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    margin-bottom: 12px;
+  }
+  .exp-bullets li .num { color: var(--border2); flex-shrink: 0; }
+  .exp-item.current .exp-bullets li .num { color: var(--muted); }
+
+  /* ── ABOUT ── */
+  #about {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .about-heading {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 700;
+    letter-spacing: -.04em;
+    line-height: 1;
+    margin: 24px 0 40px;
+  }
+
+  .about-p {
+    font-size: 20px;
+    font-weight: 400;
+    color: #d4d4d8;
+    line-height: 1.75;
+    margin-bottom: 28px;
+  }
+  .about-p.muted { color: var(--muted); }
+
+  /* Redesign: dashboard panel */
+  .dashboard {
+    position: sticky;
+    top: 100px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+  }
+  .dash-topbar {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface2);
+  }
+  .dash-dots { display: flex; gap: 6px; }
+  .dash-dot  { width: 8px; height: 8px; border-radius: 50%; background: var(--border2); }
+  .dash-title {
+    font-family: var(--mono);
+    font-size: 8px;
+    text-transform: uppercase;
+    letter-spacing: .3em;
+    color: var(--muted);
+  }
+  .dash-body { padding: 32px 24px; }
+
+  .dash-row { margin-bottom: 32px; }
+  .dash-label {
+    font-family: var(--mono);
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .3em;
+    color: var(--white);
+    display: flex; align-items: center; gap: 8px;
+    margin-bottom: 12px;
+  }
+  .dash-label-dot { width: 5px; height: 5px; background: var(--white); flex-shrink: 0; }
+  .dash-values {
+    padding-left: 16px;
+    border-left: 1px solid var(--border);
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 2;
+  }
+  .dash-tags { display: flex; flex-wrap: wrap; gap: 8px; padding-left: 16px; border-left: 1px solid var(--border); }
+  .dash-tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    padding: 3px 10px;
+  }
+  .dash-footer {
+    padding: 12px 24px;
+    border-top: 1px solid var(--border);
+    font-family: var(--mono);
+    font-size: 8px;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    color: var(--border2);
+    display: flex; justify-content: space-between;
+  }
+
+  /* ── PORTFOLIO ── */
+  #portfolio { max-width: 1200px; margin: 0 auto; }
+
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    margin-top: 48px;
+  }
+
+  .project-card {
+    background: var(--bg);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    min-height: 280px;
+    transition: background .2s;
+    text-decoration: none;
+    color: inherit;
+  }
+  .project-card:hover { background: var(--surface); }
+
+  .proj-cat {
+    font-family: var(--mono);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .4em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 12px;
+  }
+  .proj-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--border2);
+    margin-bottom: auto;
+  }
+  .proj-title {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -.02em;
+    color: var(--white);
+    margin-bottom: 12px;
+    margin-top: 24px;
+    line-height: 1.2;
+  }
+  .proj-desc {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+  .proj-footer { display: flex; align-items: center; justify-content: space-between; margin-top: auto; }
+  .proj-tech {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--slate);
+    border: 1px solid var(--border);
+    padding: 3px 8px;
+  }
+  .proj-arrow {
+    font-family: var(--mono);
+    font-size: 9px;
+    color: var(--muted);
+    letter-spacing: .15em;
+    transition: color .2s;
+  }
+  .project-card:hover .proj-arrow { color: var(--white); }
+
+  /* Dashed end-of-archive */
+  .proj-end {
+    background: var(--bg);
+    border: 1px dashed var(--border);
+    display: flex; align-items: center; justify-content: center;
+    min-height: 280px;
+  }
+  .proj-end span {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: .4em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.08);
+  }
+
+  /* ── CONTACT ── */
+  #contact {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .contact-links { margin-top: 48px; }
+  .contact-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 28px 0;
+    border-bottom: 1px solid var(--border);
+    text-decoration: none;
+    color: inherit;
+    transition: border-color .2s;
+  }
+  .contact-link:hover { border-color: var(--white); }
+  .contact-type {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: .3em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+  .contact-val {
+    font-family: var(--mono);
+    font-size: 20px;
+    font-weight: 300;
+    color: rgba(255,255,255,.7);
+    transition: color .2s;
+  }
+  .contact-link:hover .contact-val { color: var(--white); }
+  .contact-arrow { color: var(--muted); font-size: 20px; transition: color .2s, transform .2s; }
+  .contact-link:hover .contact-arrow { color: var(--white); transform: translate(3px,-3px); }
+
+  /* Radar panel */
+  .radar-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 24px;
+    padding: 48px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+  }
+  .radar {
+    position: relative;
+    width: 220px; height: 220px;
+    border-radius: 50%;
+  }
+  .radar-ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid var(--border2);
+  }
+  .radar-ring:nth-child(1) { inset: 0; }
+  .radar-ring:nth-child(2) { inset: 25%; }
+  .radar-ring:nth-child(3) { inset: 50%; }
+  .radar-cross {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .radar-cross::before, .radar-cross::after {
+    content: '';
+    position: absolute;
+    background: var(--border2);
+  }
+  .radar-cross::before { width: 1px; height: 100%; }
+  .radar-cross::after  { width: 100%; height: 1px; }
+  .radar-sweep-el {
+    position: absolute; inset: 0;
+    border-radius: 50%;
+    background: conic-gradient(from 0deg, transparent 300deg, rgba(25,222,35,.12) 360deg);
+    animation: sweep 4s linear infinite;
+  }
+  @keyframes sweep { to { transform: rotate(360deg); } }
+  .radar-dot {
+    position: absolute;
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--green);
+    box-shadow: 0 0 6px var(--green);
+  }
+  .radar-dot:nth-child(5) { top: 30%; left: 55%; }
+  .radar-dot:nth-child(6) { top: 60%; left: 35%; }
+  .radar-dot:nth-child(7) { top: 45%; left: 65%; }
+  .radar-label {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: .3em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* ── SECTION KICKER ── */
+  .sect-kicker {
+    font-family: var(--mono);
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: .35em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 16px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .sect-kicker::before {
+    content: '';
+    display: inline-block;
+    width: 20px; height: 1px;
+    background: var(--muted);
+  }
+
+  /* ── PAGE TABS (for prototype navigation) ── */
+  .proto-tabs {
+    position: fixed;
+    top: 72px;
+    left: 0; right: 0;
+    z-index: 99;
+    display: flex;
+    gap: 2px;
+    padding: 8px 48px;
+    background: rgba(5,5,5,.9);
+    border-bottom: 1px solid var(--border);
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: .2em;
+  }
+  .proto-tab {
+    padding: 4px 12px;
+    color: var(--muted);
+    cursor: pointer;
+    text-transform: uppercase;
+    border: 1px solid transparent;
+  }
+  .proto-tab:hover { color: var(--white); }
+  .proto-label {
+    color: var(--muted);
+    margin-right: 16px;
+    display: flex; align-items: center;
+  }
+
+  /* redesign callout boxes */
+  .redesign-note {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 10px;
+    background: rgba(25,222,35,.05);
+    border: 1px solid rgba(25,222,35,.2);
+    padding: 10px 14px;
+    margin-top: 24px;
+    font-family: var(--mono);
+    font-size: 10px;
+    color: rgba(25,222,35,.7);
+    line-height: 1.6;
+    max-width: 480px;
+    text-align: left;
+  }
+  .redesign-note .icon { flex-shrink: 0; }
+</style>
+</head>
+<body>
+
+<div class="grid-bg"></div>
+
+<!-- NAV — REDESIGN: green underline active indicator instead of just bold -->
+<nav>
+  <a href="#home" class="nav-logo">FA<span>.</span></a>
+  <div class="nav-links">
+    <a href="#home"       class="active">HOME</a>
+    <a href="#about">ABOUT</a>
+    <a href="#experience">EXPERIENCE</a>
+    <a href="#portfolio">PORTFOLIO</a>
+    <a href="#contact">CONTACT</a>
+  </div>
+</nav>
+
+<!-- PROTO TABS NOTE -->
+<div class="proto-tabs">
+  <span class="proto-label">PROTOTYPE PREVIEW →</span>
+  <a href="#home"       class="proto-tab">HOME</a>
+  <a href="#experience" class="proto-tab">EXPERIENCE</a>
+  <a href="#about"      class="proto-tab">ABOUT</a>
+  <a href="#portfolio"  class="proto-tab">PORTFOLIO</a>
+  <a href="#contact"    class="proto-tab">CONTACT</a>
+</div>
+
+<!-- ═══════════════════════ HOME ═══════════════════════ -->
+<section id="home" class="page" style="padding-top:160px;">
+
+  <!-- Coordinate panels (fixed in real site) -->
+  <div class="home-side left" style="position:absolute;">
+    <div><span class="val">40.7128° N</span></div>
+    <div style="color:var(--muted);font-size:8px;">LAT</div>
+    <br/>
+    <div><span class="val">74.0060° W</span></div>
+    <div style="color:var(--muted);font-size:8px;">LONG</div>
+  </div>
+
+  <div class="home-side right" style="position:absolute;">
+    <div class="label">Location</div>
+    <div class="val">New York, NY</div>
+    <br/>
+    <div class="label">Focus</div>
+    <div class="val">Infrastructure & Data</div>
+    <br/>
+    <div class="label">Status</div>
+    <div class="val">Building</div>
+  </div>
+
+  <div class="home-inner" style="margin:0 auto;text-align:center;">
+    <div class="kicker">Software Engineer</div>
+
+    <!-- REDESIGN: clamp() for responsive font size -->
+    <h1 class="hero-name">Francis Alcos</h1>
+
+    <p class="hero-sub">
+      I design and build distributed systems, data infrastructure, and performance-driven software.
+      Currently focused on <strong>backend systems, scalability, and reliability</strong>.
+    </p>
+
+    <div class="redesign-note">
+      <span class="icon">💡</span>
+      <span>REDESIGN: hero name uses <code>clamp(3.5rem, 9vw, 8rem)</code> — responsive on all screens. Original was fixed 128px.</span>
+    </div>
+
+    <!-- REDESIGN: alternating tag colors for scan-ability -->
+    <div class="tags-track" style="margin-top:48px;">
+      <div class="tags-inner">
+        <!-- Set 1 -->
+        <span class="tag tech">DISTRIBUTED_SYSTEMS</span>
+        <span class="tag other">MARATHON_42.2KM</span>
+        <span class="tag tech">DATA_INFRASTRUCTURE</span>
+        <span class="tag other">ULTRA_RUNNING</span>
+        <span class="tag tech">SCALABILITY</span>
+        <span class="tag other">BIO_OPTIMIZATION</span>
+        <span class="tag tech">BACKEND_SYSTEMS</span>
+        <span class="tag other">ENDURANCE_SPORT</span>
+        <span class="tag tech">OBSERVABILITY</span>
+        <span class="tag other">SYSTEMS_DESIGN</span>
+        <!-- Set 2 (duplicate for seamless loop) -->
+        <span class="tag tech">DISTRIBUTED_SYSTEMS</span>
+        <span class="tag other">MARATHON_42.2KM</span>
+        <span class="tag tech">DATA_INFRASTRUCTURE</span>
+        <span class="tag other">ULTRA_RUNNING</span>
+        <span class="tag tech">SCALABILITY</span>
+        <span class="tag other">BIO_OPTIMIZATION</span>
+        <span class="tag tech">BACKEND_SYSTEMS</span>
+        <span class="tag other">ENDURANCE_SPORT</span>
+        <span class="tag tech">OBSERVABILITY</span>
+        <span class="tag other">SYSTEMS_DESIGN</span>
+      </div>
+    </div>
+
+    <div class="redesign-note" style="margin:24px auto 0;display:flex;">
+      <span class="icon">💡</span>
+      <span>REDESIGN: tags now alternate white/gray — original was all-white making them hard to scan individually.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ EXPERIENCE ═══════════════════════ -->
+<section id="experience" class="page" style="max-width:none;">
+<div style="max-width:1200px;margin:0 auto;">
+
+  <div class="section-header">
+    <div class="sect-kicker">HISTORY // ENGINEERING_EXPERIENCE_v3.1</div>
+    <h1 style="font-size:clamp(2.5rem,6vw,5rem);font-weight:700;letter-spacing:-.04em;text-transform:uppercase;">
+      EXPERIENCE
+    </h1>
+    <p class="section-sub">
+      Systematic record of professional technical contributions and architectural deployments.
+    </p>
+  </div>
+
+  <!-- REDESIGN: 1280px max-width (was 1385px, breaking the grid) -->
+  <div class="redesign-note" style="margin-bottom:40px;">
+    <span class="icon">🔴</span>
+    <span>FIX APPLIED: Frame width corrected to 1280px. Original was 1385px — wider than the site grid.</span>
+  </div>
+
+  <div class="timeline">
+
+    <!-- Datadog — current -->
+    <div class="exp-item current">
+      <div class="exp-period">2026 — Present</div>
+      <div class="exp-header">
+        <img class="exp-logo" src="../public/datadog.png" alt="Datadog" onerror="this.style.display='none'" />
+        <div class="exp-company">Datadog</div>
+      </div>
+      <!-- REDESIGN: role badge — clearly labeled current -->
+      <div class="exp-role-badge">Software Engineer · Current</div>
+      <ul class="exp-bullets">
+        <li><span class="num">01</span><span>Architecting high-scale observability platforms and distributed data pipelines.</span></li>
+        <li><span class="num">02</span><span>Optimization of backend services for global monitoring infrastructure.</span></li>
+      </ul>
+    </div>
+
+    <!-- Datadog intern — Winter 2025 (missing from Figma, present in code) -->
+    <div class="exp-item">
+      <div class="exp-period">Winter 2025</div>
+      <div class="exp-header">
+        <img class="exp-logo" src="../public/datadog.png" alt="Datadog" onerror="this.style.display='none'" />
+        <div class="exp-company">Datadog</div>
+      </div>
+      <div class="exp-role-badge">Software Engineer Intern · Mosaic Blocks</div>
+      <ul class="exp-bullets">
+        <li><span class="num">01</span><span>Engineered core infrastructure services to support platform scalability and low-latency data retrieval.</span></li>
+        <li><span class="num">02</span><span>Implemented performance monitoring tools for distributed system health and resource allocation.</span></li>
+      </ul>
+      <div class="redesign-note" style="margin-top:12px;">
+        <span class="icon">⚠️</span>
+        <span>BUG: responsibilities are copy-pasted from LinkedIn Summer 2025. Needs real content.</span>
+      </div>
+    </div>
+
+    <!-- LinkedIn Summer 2025 -->
+    <div class="exp-item">
+      <div class="exp-period">Summer 2025</div>
+      <div class="exp-header">
+        <img class="exp-logo" src="../public/linkedin.png" alt="LinkedIn" onerror="this.style.display='none'" />
+        <div class="exp-company">LinkedIn</div>
+      </div>
+      <!-- REDESIGN: role badge differentiates from Summer 2024 -->
+      <div class="exp-role-badge">Intern · Backend Infrastructure</div>
+      <ul class="exp-bullets">
+        <li><span class="num">01</span><span>Engineered core infrastructure services to support platform scalability and low-latency data retrieval.</span></li>
+        <li><span class="num">02</span><span>Implemented performance monitoring tools for distributed system health and resource allocation.</span></li>
+      </ul>
+    </div>
+
+    <!-- LinkedIn Summer 2024 -->
+    <div class="exp-item">
+      <div class="exp-period">Summer 2024</div>
+      <div class="exp-header">
+        <img class="exp-logo" src="../public/linkedin.png" alt="LinkedIn" onerror="this.style.display='none'" />
+        <div class="exp-company">LinkedIn</div>
+      </div>
+      <!-- REDESIGN: different badge makes it immediately distinct from Summer 2025 -->
+      <div class="exp-role-badge">Intern · Ad Formats</div>
+      <ul class="exp-bullets">
+        <li><span class="num">01</span><span>Developed high-performance rendering engines for diverse advertisement formats across web and mobile.</span></li>
+        <li><span class="num">02</span><span>Leveraged internal frameworks to streamline ad delivery and maximize engagement metrics.</span></li>
+      </ul>
+    </div>
+
+    <!-- Liberty Mutual -->
+    <div class="exp-item">
+      <div class="exp-period">Summer 2023</div>
+      <div class="exp-header">
+        <img class="exp-logo" src="../public/libertymutual.png" alt="Liberty Mutual" onerror="this.style.display='none'" />
+        <div class="exp-company">Liberty Mutual</div>
+      </div>
+      <div class="exp-role-badge">Software Engineering Intern</div>
+      <ul class="exp-bullets">
+        <li><span class="num">01</span><span>Automated internal reporting workflows utilizing enterprise cloud infrastructure and Java services.</span></li>
+        <li><span class="num">02</span><span>Optimized database queries for large-scale insurance claim processing systems.</span></li>
+      </ul>
+    </div>
+
+    <!-- UMass Boston -->
+    <div class="exp-item">
+      <div class="exp-period">2023 — 2024</div>
+      <div class="exp-header">
+        <img class="exp-logo" src="../public/umass.png" alt="UMass Boston" onerror="this.style.display='none'" />
+        <div class="exp-company">UMass Boston</div>
+      </div>
+      <div class="exp-role-badge">Course Assistant · Computer Science</div>
+      <ul class="exp-bullets">
+        <li><span class="num">01</span><span>Facilitated technical labs in Data Structures and Algorithms for undergraduate students.</span></li>
+        <li><span class="num">02</span><span>Conducted code reviews and provided architectural guidance for complex software projects.</span></li>
+      </ul>
+    </div>
+
+    <!-- SVL -->
+    <div class="exp-item">
+      <div class="exp-period">2022 — 2023</div>
+      <div class="exp-header">
+        <div class="exp-company">Software Verification Lab</div>
+      </div>
+      <div class="exp-role-badge">Research Assistant</div>
+      <ul class="exp-bullets">
+        <li><span class="num">01</span><span>Investigated formal methods for system security and memory-safe program execution.</span></li>
+        <li><span class="num">02</span><span>Developed automated testing suites using LLVM and static analysis tools.</span></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- ═══════════════════════ ABOUT ═══════════════════════ -->
+<section id="about" class="page" style="max-width:none;">
+<div id="about" style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;">
+
+  <div>
+    <div class="sect-kicker">PROFILE // ENGINEER_SPEC_v1.0.0</div>
+    <h1 class="about-heading">Hey, I'm Francis!</h1>
+    <p class="about-p">
+      I am a software engineer driven by deep curiosity and architectural precision. I enjoy learning how
+      complex systems work from the ground up, focusing on the beauty of efficient backends, the resilience
+      of distributed systems, and the absolute necessity of reliability.
+    </p>
+    <p class="about-p muted">
+      Outside of the terminal, this discipline translates into endurance. As a triathlete and ultra-marathoner,
+      I find parity between long-form code optimization and hundred-mile trails. Both require a calm mind,
+      sustained output, and a deep respect for the mechanics of a high-performance system.
+    </p>
+  </div>
+
+  <!-- REDESIGN: sticky dashboard panel -->
+  <div class="dashboard">
+    <div class="dash-topbar">
+      <div class="dash-dots">
+        <div class="dash-dot"></div>
+        <div class="dash-dot"></div>
+        <div class="dash-dot"></div>
+      </div>
+      <span class="dash-title">PROFILE.ENGINEER_SPEC v1.0.0</span>
+    </div>
+    <div class="dash-body">
+      <div class="dash-row">
+        <div class="dash-label"><div class="dash-label-dot"></div> ROLE</div>
+        <div class="dash-values">Backend Infrastructure Engineer</div>
+      </div>
+      <div class="dash-row">
+        <div class="dash-label"><div class="dash-label-dot"></div> ENGINEERING</div>
+        <div class="dash-values">
+          Backend Systems<br/>
+          Distributed Infrastructure<br/>
+          Data-Intensive Applications<br/>
+          Performance Optimization
+        </div>
+      </div>
+      <div class="dash-row">
+        <div class="dash-label"><div class="dash-label-dot"></div> OFF-CLOCK</div>
+        <div class="dash-values">
+          Endurance running<br/>
+          Strength progression<br/>
+          Reading & reflection
+        </div>
+      </div>
+      <div class="dash-row">
+        <div class="dash-label"><div class="dash-label-dot"></div> PRINCIPLES</div>
+        <div class="dash-tags">
+          <span class="dash-tag">Build for reliability</span>
+          <span class="dash-tag">Prefer clarity</span>
+          <span class="dash-tag">Improve incrementally</span>
+          <span class="dash-tag">Think long-term</span>
+        </div>
+      </div>
+    </div>
+    <div class="dash-footer">
+      <span>Status: operational</span>
+      <span>Region: us-east-1</span>
+    </div>
+  </div>
+
+  <div class="redesign-note" style="grid-column:1/-1;">
+    <span class="icon">💡</span>
+    <span>REDESIGN: right dashboard is <code>position: sticky; top: 100px</code> — stays visible as you scroll the narrative. Also: region corrected from us-west-2 → us-east-1 (New York).</span>
+  </div>
+
+</div>
+</section>
+
+<!-- ═══════════════════════ PORTFOLIO ═══════════════════════ -->
+<section id="portfolio" class="page">
+<div style="max-width:1200px;margin:0 auto;">
+
+  <div class="section-header">
+    <div class="sect-kicker">ARCHIVE // BUILD_HISTORY_v2.00</div>
+    <h1 style="font-size:clamp(2.5rem,6vw,5rem);font-weight:700;letter-spacing:-.04em;text-transform:uppercase;">
+      PORTFOLIO: <span style="font-weight:300;color:rgba(255,255,255,.25);">CODE & FEATS</span>
+    </h1>
+    <p class="section-sub" style="color:var(--slate);">
+      A high-density collection of distributed engines, low-level simulations, and scalable architectures.
+    </p>
+  </div>
+
+  <div style="display:flex;align-items:center;gap:24px;margin-bottom:40px;">
+    <h2 style="font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.6);white-space:nowrap;">
+      TECHNICAL REPOSITORIES
+    </h2>
+    <div style="flex:1;height:1px;background:var(--border);"></div>
+  </div>
+
+  <div class="project-grid">
+    <a class="project-card" href="#">
+      <div class="proj-cat">ADTECH</div>
+      <div class="proj-num">01</div>
+      <div class="proj-title">Soft Frequency Capping Engine</div>
+      <div class="proj-desc">Distributed real-time ad delivery system with sub-millisecond state lookups using Akka and Kafka.</div>
+      <div class="proj-footer">
+        <span class="proj-tech">Scala</span>
+        <span class="proj-arrow">→</span>
+      </div>
+    </a>
+    <a class="project-card" href="#">
+      <div class="proj-cat">SAAS</div>
+      <div class="proj-num">02</div>
+      <div class="proj-title">JoeGym SaaS Platform</div>
+      <div class="proj-desc">Scalable fitness infrastructure with automated data synchronization protocols and high-availability design.</div>
+      <div class="proj-footer">
+        <span class="proj-tech">Next.js</span>
+        <span class="proj-arrow">→</span>
+      </div>
+    </a>
+    <a class="project-card" href="#">
+      <div class="proj-cat">SYSTEMS</div>
+      <div class="proj-num">03</div>
+      <div class="proj-title">Multithreaded Queueing Simulation</div>
+      <div class="proj-desc">Architectural simulation of producer-consumer patterns using POSIX primitives and deadlock prevention.</div>
+      <div class="proj-footer">
+        <span class="proj-tech">C / Pthreads</span>
+        <span class="proj-arrow">→</span>
+      </div>
+    </a>
+    <a class="project-card" href="#">
+      <div class="proj-cat">STORAGE</div>
+      <div class="proj-num">04</div>
+      <div class="proj-title">Distributed Key-Value Store</div>
+      <div class="proj-desc">Fault-tolerant, eventual consistency storage engine with Raft consensus implementation.</div>
+      <div class="proj-footer">
+        <span class="proj-tech">Rust</span>
+        <span class="proj-arrow">→</span>
+      </div>
+    </a>
+    <a class="project-card" href="#">
+      <div class="proj-cat">TRADING</div>
+      <div class="proj-num">05</div>
+      <div class="proj-title">Real-time Ad Auction Engine</div>
+      <div class="proj-desc">Ultra-low latency bidding infrastructure processing millions of requests per second.</div>
+      <div class="proj-footer">
+        <span class="proj-tech">Go</span>
+        <span class="proj-arrow">→</span>
+      </div>
+    </a>
+    <div class="proj-end">
+      <span>End_Of_Archive</span>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<!-- ═══════════════════════ CONTACT ═══════════════════════ -->
+<section id="contact" class="page">
+<div style="max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;">
+
+  <div>
+    <div class="sect-kicker">INTERFACE // CONNECTION_ENDPOINT_v1.0</div>
+    <h1 style="font-size:clamp(2.5rem,6vw,5rem);font-weight:700;letter-spacing:-.04em;text-transform:uppercase;">
+      CONTACT
+    </h1>
+    <p style="font-family:var(--mono);font-size:16px;font-weight:300;color:var(--muted);margin-top:16px;max-width:400px;line-height:1.7;">
+      Open to thoughtful conversations about backend systems, infrastructure, and scalable software.
+    </p>
+
+    <div class="contact-links">
+      <a class="contact-link" href="mailto:francis@alcos.dev">
+        <div>
+          <div class="contact-type">Email</div>
+          <div class="contact-val">francis@alcos.dev</div>
+        </div>
+        <span class="contact-arrow">↗</span>
+      </a>
+      <a class="contact-link" href="https://github.com/fdoalcos" target="_blank">
+        <div>
+          <div class="contact-type">GitHub</div>
+          <div class="contact-val">github.com/fdoalcos</div>
+        </div>
+        <span class="contact-arrow">↗</span>
+      </a>
+      <a class="contact-link" href="https://linkedin.com/in/francisalcos" target="_blank">
+        <div>
+          <div class="contact-type">LinkedIn</div>
+          <div class="contact-val">linkedin.com/in/francisalcos</div>
+        </div>
+        <span class="contact-arrow">↗</span>
+      </a>
+    </div>
+
+    <!-- REDESIGN NOTE: footer font fix -->
+    <div class="redesign-note" style="margin-top:32px;">
+      <span class="icon">🟡</span>
+      <span>FIX: Contact nav now uses Space Grotesk (matches header). Original used JetBrains Mono — inconsistent.</span>
+    </div>
+  </div>
+
+  <!-- Radar -->
+  <div class="radar-panel">
+    <div class="radar">
+      <div class="radar-ring"></div>
+      <div class="radar-ring"></div>
+      <div class="radar-ring"></div>
+      <div class="radar-cross"></div>
+      <div class="radar-sweep-el"></div>
+      <div class="radar-dot"></div>
+      <div class="radar-dot"></div>
+      <div class="radar-dot"></div>
+    </div>
+    <div class="radar-label">Signal Active</div>
+  </div>
+
+</div>
+</section>
+
+<!-- FOOTER STATUS BAR — REDESIGN: uses Space Grotesk + green pulse dot -->
+<footer>
+  <div class="status-left">
+    <div class="status-dot"></div>
+    <span class="status-online">SYSTEM ONLINE</span>
+    <span style="color:var(--border2);">|</span>
+    <span class="status-path">PATH: /ALCOS/HOME</span>
+  </div>
+  <span style="font-family:var(--sans);font-size:10px;color:var(--muted);letter-spacing:.15em;">FRANCIS ALCOS</span>
+  <span class="status-tagline">CODE IS THE ULTIMATE ENDURANCE SPORT</span>
+</footer>
+
+<script>
+  // Update nav active state on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const links = document.querySelectorAll('.nav-links a');
+
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        links.forEach(l => l.classList.remove('active'));
+        const active = document.querySelector(`.nav-links a[href="#${e.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { threshold: 0.4 });
+
+  sections.forEach(s => obs.observe(s));
+</script>
+
+</body>
+</html>

@@ -35,20 +35,29 @@
 }
 
 .terminal-grid {
-  background-image: radial-gradient(circle, #ffffff05 1px, transparent 1px);
-  background-size: 60px 60px;
+  background-image:
+    radial-gradient(ellipse 90% 60% at 50% 0%, rgba(255,255,255,0.055) 0%, transparent 65%),
+    linear-gradient(rgba(255,255,255,0.038) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.038) 1px, transparent 1px),
+    radial-gradient(circle, rgba(255,255,255,0.18) 1px, transparent 1px);
+  background-size: 100% 100%, 48px 48px, 48px 48px, 48px 48px;
 }
 
 .grid-pattern {
-  background-image: radial-gradient(circle at 1px 1px, #1a1a1a 1px, transparent 0);
-  background-size: 32px 32px;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(255,255,255,0.04) 0%, transparent 60%),
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px),
+    radial-gradient(circle, rgba(255,255,255,0.14) 1px, transparent 1px);
+  background-size: 100% 100%, 48px 48px, 48px 48px, 48px 48px;
 }
 
 .dashboard-grid {
-  background-size: 30px 30px;
   background-image:
-    linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
+    linear-gradient(rgba(255,255,255,0.032) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.032) 1px, transparent 1px),
+    radial-gradient(circle, rgba(255,255,255,0.12) 1px, transparent 1px);
+  background-size: 30px 30px, 30px 30px, 30px 30px;
 }
 
 .scanline {

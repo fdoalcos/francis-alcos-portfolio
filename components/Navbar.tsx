@@ -33,7 +33,7 @@ export default function Navbar() {
                 href={item.href}
                 className={`text-[11px] font-mono tracking-[0.2em] uppercase transition-colors duration-300 ${
                   isActive
-                    ? 'text-white relative after:content-[""] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-[1px] after:bg-white'
+                    ? 'text-white relative after:content-[""] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-[1px] after:bg-status-green'
                     : 'text-console-gray hover:text-white'
                 }`}
               >

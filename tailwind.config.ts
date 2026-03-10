@@ -24,7 +24,7 @@ const config: Config = {
         'tag-gray': '#1e1e1e',
         'console-gray': '#737373',
         'border-gray': '#1f1f1f',
-        'status-green': '#4ade80',
+        'status-green': '#19de23',
         'surface-dark': '#0a0a0a',
         'border-dark': '#1a1a1a',
       },
