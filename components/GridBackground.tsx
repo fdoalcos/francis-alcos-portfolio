@@ -41,7 +41,7 @@ export default function GridBackground({ mode = 'tight' }: GridBackgroundProps) 
 
     // Draws every grid line in the viewport — base opacity always on, glow fades from center
     const drawFullGridGlow = (sx: number, sy: number, radius: number, glowOp: number) => {
-      const baseOp = 0.04;
+      const baseOp = 0.06;
       const x1 = Math.ceil(w / GRID) * GRID;
       const y1 = Math.ceil(h / GRID) * GRID;
 
@@ -51,6 +51,8 @@ export default function GridBackground({ mode = 'tight' }: GridBackgroundProps) 
         const t = Math.max(0, 1 - Math.abs(ly - sy) / radius);
         const fade = baseOp + glowOp * t * t;
         ctx.strokeStyle = `rgba(255,255,255,${fade})`;
+        ctx.shadowColor = 'rgba(255,255,255,1)';
+        ctx.shadowBlur  = fade * 45;
         ctx.beginPath();
         ctx.moveTo(0, ly);
         ctx.lineTo(w, ly);
@@ -61,11 +63,16 @@ export default function GridBackground({ mode = 'tight' }: GridBackgroundProps) 
         const t = Math.max(0, 1 - Math.abs(lx - sx) / radius);
         const fade = baseOp + glowOp * t * t;
         ctx.strokeStyle = `rgba(255,255,255,${fade})`;
+        ctx.shadowColor = 'rgba(255,255,255,1)';
+        ctx.shadowBlur  = fade * 45;
         ctx.beginPath();
         ctx.moveTo(lx, 0);
         ctx.lineTo(lx, h);
         ctx.stroke();
       }
+
+      ctx.shadowBlur  = 0;
+      ctx.shadowColor = 'transparent';
     };
 
     const drawSpotQuad = (sx: number, sy: number, radius: number, opacity: number) => {
@@ -168,8 +175,8 @@ export default function GridBackground({ mode = 'tight' }: GridBackgroundProps) 
 
     // ── Mode C: diffuse ────────────────────────────────────────────
     let dT = 0;
-    const dRadius = 500;
-    const dMaxOp  = 0.16;
+    const dRadius = 200;
+    const dMaxOp  = 0.42;
 
     // ── Mode D: wave ───────────────────────────────────────────────
     let bandX = -300;
