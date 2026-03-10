@@ -1,9 +1,10 @@
 import ScrollingKeywords from '@/components/ScrollingKeywords';
+import GridBackground from '@/components/GridBackground';
 
 export default function Home() {
   return (
     <div className="relative flex flex-col items-center justify-center min-h-screen px-4 pt-20 text-center">
-      <div className="fixed inset-0 terminal-grid pointer-events-none"></div>
+      <GridBackground mode="diffuse" />
       
       {/* Left side info panel */}
       <div className="fixed top-1/2 -translate-y-1/2 left-12 hidden lg:block opacity-60">

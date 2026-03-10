@@ -38,10 +38,10 @@
   background-image:
     radial-gradient(ellipse 90% 60% at 50% 0%, rgba(255,255,255,0.055) 0%, transparent 65%),
     linear-gradient(rgba(255,255,255,0.038) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.038) 1px, transparent 1px),
-    radial-gradient(circle, rgba(255,255,255,0.18) 1px, transparent 1px);
-  background-size: 100% 100%, 48px 48px, 48px 48px, 48px 48px;
+    linear-gradient(90deg, rgba(255,255,255,0.038) 1px, transparent 1px);
+  background-size: 100% 100%, 48px 48px, 48px 48px;
 }
+
 
 .grid-pattern {
   background-image:
