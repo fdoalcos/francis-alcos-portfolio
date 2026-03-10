@@ -7,7 +7,7 @@ export default function Home() {
       
       {/* Left side info panel */}
       <div className="fixed top-1/2 -translate-y-1/2 left-12 hidden lg:block opacity-60">
-        <div className="text-[9px] font-mono leading-relaxed text-white space-y-1">
+        <div className="text-[12px] font-mono leading-relaxed text-white space-y-1">
           <div className="flex items-center gap-2">
             <span className="text-accent-gray">LAT:</span> 40.7128° N
           </div>
@@ -19,24 +19,24 @@ export default function Home() {
 
       {/* Right side info panel */}
       <div className="fixed top-1/2 -translate-y-1/2 right-12 hidden lg:block z-20">
-        <div className="text-[10px] font-mono leading-relaxed space-y-6 text-right">
+        <div className="text-[12px] font-mono leading-relaxed space-y-6 text-right">
           <div className="space-y-1">
-            <p className="text-[8px] uppercase tracking-[0.25em] text-accent-gray font-bold">
+            <p className="text-[11px] uppercase tracking-[0.25em] text-accent-gray font-bold">
               Location
             </p>
-            <p className="text-white font-medium text-[11px]">New York, NY</p>
+            <p className="text-white font-medium text-[13px]">New York, NY</p>
           </div>
           <div className="space-y-1">
-            <p className="text-[8px] uppercase tracking-[0.25em] text-accent-gray font-bold">
+            <p className="text-[11px] uppercase tracking-[0.25em] text-accent-gray font-bold">
               Focus
             </p>
-            <p className="text-white font-medium text-[11px]">Infrastructure & Data</p>
+            <p className="text-white font-medium text-[13px]">Infrastructure & Data</p>
           </div>
           <div className="space-y-1">
-            <p className="text-[8px] uppercase tracking-[0.25em] text-accent-gray font-bold">
+            <p className="text-[11px] uppercase tracking-[0.25em] text-accent-gray font-bold">
               Status
             </p>
-            <p className="text-white font-medium text-[11px]">Building</p>
+            <p className="text-white font-medium text-[13px]">Building</p>
           </div>
         </div>
       </div>
