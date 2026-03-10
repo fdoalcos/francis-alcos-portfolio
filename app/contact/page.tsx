@@ -62,14 +62,14 @@ export default function Contact() {
             <div className="w-full space-y-1 flex-grow">
               <a
                 className="group flex items-center justify-between py-8 border-b border-border-gray hover:border-white transition-colors"
-                href="mailto:francis@alcos.dev"
+                href="mailto:alcosfrancis@gmail.com"
               >
                 <div className="flex flex-col">
                   <span className="text-[10px] text-console-gray uppercase tracking-widest mb-2 font-mono">
                     email
                   </span>
                   <span className="text-2xl font-light text-white/80 group-hover:text-white transition-colors font-mono">
-                    francis@alcos.dev
+                    alcosfrancis@gmail.com
                   </span>
                 </div>
                 <span className="text-console-gray group-hover:text-white group-hover:translate-x-1 transition-all">
@@ -98,7 +98,7 @@ export default function Contact() {
 
               <a
                 className="group flex items-center justify-between py-8 border-b border-border-gray hover:border-white transition-colors"
-                href="https://linkedin.com/in/francisalcos"
+                href="https://linkedin.com/in/fdoalcos"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -107,7 +107,7 @@ export default function Contact() {
                     linkedin
                   </span>
                   <span className="text-2xl font-light text-white/80 group-hover:text-white transition-colors font-mono">
-                    linkedin.com/in/francisalcos
+                    linkedin.com/in/fdoalcos
                   </span>
                 </div>
                 <span className="text-console-gray group-hover:text-white group-hover:translate-x-1 transition-all">
