@@ -236,7 +236,7 @@ export default function GridBackground({ mode = 'tight' }: GridBackgroundProps) 
       }
 
       else if (mode === 'diffuse') {
-        dT += 0.008;
+        dT += 0.009;
         const dx = w / 2 + (w * 0.35) * Math.sin(dT);
         const dy = h / 2 + (h * 0.30) * Math.sin(dT * 1.414);
         const glowOp = dMaxOp * (0.6 + 0.4 * Math.sin(dT * 0.3));
