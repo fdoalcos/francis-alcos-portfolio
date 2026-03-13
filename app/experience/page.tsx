@@ -13,8 +13,8 @@ export default function Experience() {
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 tracking-tighter uppercase">
             EXPERIENCE
           </h1>
-          <p className="max-w-xl text-lg text-slate-400 font-light leading-relaxed font-mono text-lg">
-            Systematic record of professional technical contributions and architectural deployments.
+          <p className="max-w-2xl text-lg text-slate-400 font-light leading-relaxed">
+            A focused record of engineering work across infrastructure, backend systems, and product delivery.
           </p>
         </div>
       </header>

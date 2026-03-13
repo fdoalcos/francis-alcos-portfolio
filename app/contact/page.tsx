@@ -98,7 +98,7 @@ export default function Contact() {
                     resume
                   </span>
                   <span className="text-2xl font-light text-white/80 group-hover:text-white transition-colors font-mono">
-                    View resume
+                    view resume
                   </span>
                 </div>
                 <span className="text-console-gray group-hover:text-white group-hover:translate-x-1 transition-all">

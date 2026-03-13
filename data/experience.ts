@@ -16,10 +16,9 @@ export const experiences: Experience[] = [
     period: '2026 — Present',
     companyKey: 'datadog',
     company: 'Datadog',
-    role: 'Software Engineer',
+    role: 'Backend Infrastructure Engineer, AI Platform Training and Serving',
     responsibilities: [
-      'Architecting high-scale observability platforms and distributed data pipelines.',
-      'Optimization of backend services for global monitoring infrastructure.',
+      'Building AI Platforms at Datadog',
     ],
   },
   {
