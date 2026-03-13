@@ -122,3 +122,8 @@
 .grayscale-img {
   filter: grayscale(100%) contrast(1.1) brightness(0.7);
 }
+
+body.case-study-open .site-chrome {
+  opacity: 0;
+  pointer-events: none;
+}

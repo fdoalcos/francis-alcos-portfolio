@@ -12,7 +12,7 @@ const keywords = [
 
 export default function ScrollingKeywords() {
   return (
-    <div className="w-full max-w-6xl overflow-hidden border-y border-accent-charcoal py-6 relative bg-primary-black">
+    <div className="relative mx-auto w-full overflow-hidden border-y border-accent-charcoal bg-primary-black py-6">
       <div className="absolute inset-y-0 left-0 w-48 bg-gradient-to-r from-primary-black to-transparent z-10"></div>
       <div className="absolute inset-y-0 right-0 w-48 bg-gradient-to-l from-primary-black to-transparent z-10"></div>
       <div className="animate-scroll whitespace-nowrap">

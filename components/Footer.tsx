@@ -16,7 +16,7 @@ export default function Footer() {
   const currentPath = pathMap[pathname] || 'HOME';
 
   return (
-    <footer className="fixed bottom-0 left-0 right-0 bg-background-dark border-t border-white/10 z-50">
+    <footer className="site-chrome fixed bottom-0 left-0 right-0 bg-background-dark border-t border-white/10 z-50 transition-opacity duration-200">
       <div className="w-full px-4 md:px-6 py-3">
         <div className="flex items-center justify-between gap-6">
           <div className="flex items-center gap-3 text-[9px] font-mono tracking-[0.3em] uppercase whitespace-nowrap">

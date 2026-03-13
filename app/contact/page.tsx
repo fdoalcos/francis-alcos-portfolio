@@ -43,6 +43,33 @@ function IconNorthEast() {
   );
 }
 
+function IconDocument() {
+  return (
+    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path
+        d="M8 3.75h6.5L19.25 8.5V19A1.25 1.25 0 0 1 18 20.25H8A1.25 1.25 0 0 1 6.75 19V5A1.25 1.25 0 0 1 8 3.75Z"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M14.25 3.75V8.5H19"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M9.75 12h4.5M9.75 15.5h4.5"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
 export default function Contact() {
   return (
     <main className="pt-28 md:pt-32 pb-16 min-h-screen">
@@ -55,11 +82,30 @@ export default function Contact() {
                 CONTACT
               </h2>
               <p className="text-slate-400 text-lg font-light leading-relaxed mt-6 max-w-xl">
-                Open to thoughtful conversations about backend systems, infrastructure, and scalable software.
+                Best for backend engineering roles, infrastructure work, and conversations about scalable systems.
               </p>
             </header>
 
             <div className="w-full space-y-1 flex-grow">
+              <a
+                className="group flex items-center justify-between py-8 border-b border-border-gray hover:border-white transition-colors"
+                href="https://docs.google.com/document/d/1VyXNTx9rIzQh-GnGVImYXhGltZN9CA-UA9V2es8P1js/edit?tab=t.0"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className="flex flex-col">
+                  <span className="text-[10px] text-console-gray uppercase tracking-widest mb-2 font-mono">
+                    resume
+                  </span>
+                  <span className="text-2xl font-light text-white/80 group-hover:text-white transition-colors font-mono">
+                    View resume
+                  </span>
+                </div>
+                <span className="text-console-gray group-hover:text-white group-hover:translate-x-1 transition-all">
+                  <IconDocument />
+                </span>
+              </a>
+
               <a
                 className="group flex items-center justify-between py-8 border-b border-border-gray hover:border-white transition-colors"
                 href="mailto:alcosfrancis@gmail.com"

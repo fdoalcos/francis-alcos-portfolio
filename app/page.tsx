@@ -3,7 +3,7 @@ import GridBackground from '@/components/GridBackground';
 
 export default function Home() {
   return (
-    <div className="relative flex flex-col items-center justify-center min-h-screen px-4 pt-20 text-center">
+    <div className="relative flex h-[calc(100vh-5rem)] flex-col items-center overflow-hidden px-4 pt-20 text-center">
       <GridBackground mode="diffuse" />
       
       {/* Left side info panel */}
@@ -43,7 +43,7 @@ export default function Home() {
       </div>
 
       {/* Main content */}
-      <div className="mb-12 relative z-10">
+      <div className="relative z-10 flex flex-1 flex-col items-center justify-center -translate-y-6">
         <div className="inline-block mb-6 px-4 py-1.5 border border-accent-charcoal text-[10px] font-bold tracking-[0.5em] uppercase text-accent-light">
           SOFTWARE ENGINEER
         </div>
@@ -56,7 +56,9 @@ export default function Home() {
         </p>
       </div>
 
-      <ScrollingKeywords />
+      <div className="absolute bottom-14 left-1/2 z-10 w-[calc(100%-2rem)] max-w-6xl -translate-x-1/2">
+        <ScrollingKeywords />
+      </div>
     </div>
   );
 }
