@@ -15,9 +15,9 @@ export default function ExperienceTimeline({ experiences }: ExperienceTimelinePr
       <div className="absolute left-[7px] md:left-[167px] top-2 bottom-2 z-0 w-px bg-white/10"></div>
 
       {experiences.map((exp, index) => (
-        <div key={index} className="relative z-[1] mb-20 group">
+        <div key={index} className="relative z-[1] mb-16 group">
           <div
-            className={`absolute left-[1.5px] md:-left-[46.5px] top-3 z-40 h-[11px] w-[11px] rounded-full border transition-colors duration-300 ${
+            className={`absolute left-[-33px] md:left-[-41px] top-3 z-40 h-[11px] w-[11px] -translate-x-1/2 rounded-full border transition-colors duration-300 ${
               isCurrent(exp.period)
                 ? 'border-status-green bg-[#0b0b0b] shadow-[0_0_0_3px_#0b0b0b,0_0_8px_rgba(25,222,35,0.18)]'
                 : 'border-white/40 bg-[#0b0b0b] group-hover:border-white/70'
