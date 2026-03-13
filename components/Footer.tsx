@@ -7,13 +7,13 @@ const pathMap: Record<string, string> = {
   '/about': 'ABOUT',
   '/experience': 'EXPERIENCE',
   '/portfolio': 'PORTFOLIO',
-  '/mindset': 'MINDSET',
+  '/blog': 'BLOG',
   '/contact': 'CONTACT',
 };
 
 export default function Footer() {
   const pathname = usePathname();
-  const currentPath = pathMap[pathname] || 'HOME';
+  const currentPath = pathname.startsWith('/blog/') ? 'BLOG' : (pathMap[pathname] || 'HOME');
 
   return (
     <footer className="site-chrome fixed bottom-0 left-0 right-0 bg-background-dark border-t border-white/10 z-50 transition-opacity duration-200">

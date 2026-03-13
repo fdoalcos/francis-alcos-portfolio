@@ -47,7 +47,14 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           <h3 className="text-lg font-bold text-white mb-2 group-hover:translate-x-1 transition-transform">
             {project.title}
           </h3>
-          <p className="text-slate-400 text-sm font-light leading-relaxed mb-5">
+          <p
+            className="text-slate-400 text-sm font-light leading-relaxed mb-5 overflow-hidden"
+            style={{
+              display: '-webkit-box',
+              WebkitLineClamp: 3,
+              WebkitBoxOrient: 'vertical',
+            }}
+          >
             {project.summary}
           </p>
           <span className="inline-flex items-center gap-2 text-[9px] font-mono text-white tracking-[0.2em] uppercase opacity-70 group-hover:opacity-100 transition-opacity">

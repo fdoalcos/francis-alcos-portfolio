@@ -127,3 +127,116 @@ body.case-study-open .site-chrome {
   opacity: 0;
   pointer-events: none;
 }
+
+.blog-prose {
+  color: #d4d4d8;
+}
+
+.blog-prose h1,
+.blog-prose h2,
+.blog-prose h3,
+.blog-prose h4 {
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+.blog-prose h1 {
+  font-size: clamp(2.5rem, 7vw, 4.5rem);
+  line-height: 1;
+}
+
+.blog-prose h2 {
+  margin-top: 2.5rem;
+  font-size: 1.75rem;
+  line-height: 1.2;
+}
+
+.blog-prose h3 {
+  margin-top: 2rem;
+  font-size: 1.25rem;
+  line-height: 1.3;
+}
+
+.blog-prose p,
+.blog-prose ul,
+.blog-prose ol,
+.blog-prose blockquote,
+.blog-prose pre {
+  margin-top: 1.25rem;
+}
+
+.blog-prose p,
+.blog-prose li,
+.blog-prose blockquote {
+  font-size: 1rem;
+  line-height: 1.9;
+}
+
+.blog-prose ul,
+.blog-prose ol {
+  padding-left: 1.5rem;
+}
+
+.blog-prose ul {
+  list-style: disc;
+}
+
+.blog-prose ol {
+  list-style: decimal;
+}
+
+.blog-prose li + li {
+  margin-top: 0.5rem;
+}
+
+.blog-prose a {
+  color: #ffffff;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.35);
+  text-underline-offset: 0.2em;
+}
+
+.blog-prose strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.blog-prose em {
+  color: #e5e7eb;
+}
+
+.blog-prose code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.92em;
+  color: #f4f4f5;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0.375rem;
+  padding: 0.1rem 0.35rem;
+}
+
+.blog-prose pre {
+  overflow-x: auto;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #080808;
+  padding: 1rem;
+}
+
+.blog-prose pre code {
+  display: block;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  color: #e5e7eb;
+}
+
+.blog-prose blockquote {
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  padding-left: 1rem;
+  color: #a1a1aa;
+}
+
+.blog-prose hr {
+  margin-top: 2rem;
+  border-color: rgba(255, 255, 255, 0.08);
+}

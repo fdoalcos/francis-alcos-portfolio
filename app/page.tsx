@@ -45,7 +45,7 @@ export default function Home() {
       {/* Main content */}
       <div className="relative z-10 flex flex-1 flex-col items-center justify-center -translate-y-6">
         <div className="inline-block mb-6 px-4 py-1.5 border border-accent-charcoal text-[10px] font-bold tracking-[0.5em] uppercase text-accent-light">
-          SOFTWARE ENGINEER
+          ENGINEER • LEARNER • ATHLETE
         </div>
         <h1 className="text-[clamp(3.5rem,9vw,8rem)] font-bold tracking-tighter text-white mb-8 leading-none">
           Francis Alcos
