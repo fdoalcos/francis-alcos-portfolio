@@ -9,6 +9,17 @@ interface PortfolioCaseStudyModalProps {
   project?: ProjectCaseStudy;
 }
 
+function renderParagraphs(text: string) {
+  return text
+    .split('\n\n')
+    .filter(Boolean)
+    .map((paragraph) => (
+      <p key={paragraph} className="text-base leading-7 text-zinc-300">
+        {paragraph}
+      </p>
+    ));
+}
+
 export default function PortfolioCaseStudyModal({ project }: PortfolioCaseStudyModalProps) {
   const pathname = usePathname();
   const router = useRouter();
@@ -135,7 +146,9 @@ export default function PortfolioCaseStudyModal({ project }: PortfolioCaseStudyM
                     <p className="text-[11px] font-mono uppercase tracking-[0.3em] text-zinc-500">
                       Problem
                     </p>
-                    <p className="text-base leading-7 text-zinc-300">{project.problem}</p>
+                    <div className="space-y-4">
+                      {renderParagraphs(project.problem)}
+                    </div>
                   </div>
 
                   <div className="h-px bg-white/10" />
@@ -144,7 +157,9 @@ export default function PortfolioCaseStudyModal({ project }: PortfolioCaseStudyM
                     <p className="text-[11px] font-mono uppercase tracking-[0.3em] text-zinc-500">
                       Approach
                     </p>
-                    <p className="text-base leading-7 text-zinc-300">{project.approach}</p>
+                    <div className="space-y-4">
+                      {renderParagraphs(project.approach)}
+                    </div>
                   </div>
                 </div>
               </div>
