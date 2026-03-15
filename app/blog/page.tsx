@@ -23,9 +23,10 @@ export default function BlogPage() {
   const posts = getPublishedPosts();
 
   return (
-    <main className="min-h-screen px-6 pb-16 pt-28 md:px-8 md:pt-32">
-      <div className="mx-auto max-w-6xl">
-        <header className="mb-20 border-b border-white/10 pb-10">
+    <main className="min-h-screen max-w-7xl mx-auto px-8 pt-28 md:pt-32 pb-16">
+      <div className="fixed inset-0 grid-pattern pointer-events-none opacity-5"></div>
+      <div className="relative z-10">
+        <header className="mb-16 border-b border-border-light-gray pb-12">
           <SectionKicker text="WRITING // NOTES_ON_BUILDING" />
           <div className="mt-5">
             <h1 className="text-5xl md:text-7xl font-bold tracking-tighter leading-none uppercase text-white">
@@ -37,7 +38,7 @@ export default function BlogPage() {
           </div>
         </header>
 
-        <section className="mb-12 relative z-10">
+        <section className="mb-12">
           <div className="flex items-center gap-6 mb-12">
             <h2 className="text-sm font-bold tracking-[0.2em] uppercase text-white/80">
               BLOGS
@@ -60,7 +61,7 @@ export default function BlogPage() {
                       className="w-full h-full object-cover grayscale-img group-hover:scale-105 group-hover:opacity-90 transition-all duration-500"
                     />
                   </div>
-                  <div className="p-5 flex min-h-[220px] flex-col">
+                  <div className="p-5 flex min-h-[232px] flex-col">
                     <div className="flex items-center justify-between mb-3 gap-3">
                       <span className="text-[9px] font-mono text-white/40 tracking-widest uppercase">
                         {String(index + 1).padStart(2, '0')} / {formatDate(post.date)}
@@ -83,7 +84,7 @@ export default function BlogPage() {
                       className="text-slate-400 text-sm font-light leading-relaxed mb-5 overflow-hidden"
                       style={{
                         display: '-webkit-box',
-                        WebkitLineClamp: 2,
+                        WebkitLineClamp: 3,
                         WebkitBoxOrient: 'vertical',
                       }}
                     >

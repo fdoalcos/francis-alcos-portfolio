@@ -134,49 +134,161 @@ export const projects: ProjectCaseStudy[] = [
     id: '05',
     slug: 'gym-saas-platform',
     category: 'SAAS',
-    title: 'JoeGym SaaS Platform',
-    headline: 'A scheduling and operations platform designed around reliability for a growing fitness business.',
+    title: 'JoeGym Fitness SaaS Platform',
+    headline: 'Gym management system for automating memberships, check-ins, and administrative operations.',
     summary:
-      'Built a business-facing web platform that consolidated scheduling, operational workflows, and day-to-day data management into a single system.',
+      'Built a full-stack gym management platform that automates member management, membership tracking, and check-ins to replace manual paper-based gym operations.',
     role: 'Founder / Full-Stack Engineer',
     timeline: 'Independent build',
     team: 'Solo build with direct user feedback',
-    techStack: ['Next.js', 'TypeScript', 'Node.js', 'PostgreSQL'],
+    techStack: ['Node.js', 'Express', 'PostgreSQL', 'Prisma', 'React', 'Cloud Deployment'],
     image:
       'https://lh3.googleusercontent.com/aida-public/AB6AXuA_9YAlhi1-JfDB8JMXLN-K7J7maqaPz4k0z81yj18511QUGpQlm5YAgS9YjV4NdKpErDFCa26Vz10gU7_UK2T5JUE8cAO3Rzv-AzaaH_sQ221C54Ht9tZgHFOcIuRulxlYZO-6DWAIvH3je0YmPbd_qoU7by0YuT8VZ1-8n4XyXiXgEeJZgGRxJQOI2rVY1haqCB2InHUm97IXkPovekRJxr5orMf4dHr2KLRBAY9TfN_-qSbQipUVtNW3FpJYjdGJtYyEmKmXMZI',
     problem:
-      'The business needed one reliable interface for operational workflows instead of scattered manual processes and disconnected tools.',
+      'Many small gyms still manage members using paper forms, spreadsheets, or manual logs. This creates operational friction when handling sign-ups, renewals, check-ins, and membership tracking.\n\nManual workflows make errors more likely and become harder to manage as a gym grows. Staff must repeatedly track expiration dates, update member records, and validate attendance without a centralized system.\n\nThe platform needed to stay simple for front-desk staff, work across multiple devices, and reliably support daily workflows like registration, renewals, and check-ins.',
     approach:
-      'Designed the application around clear operational paths, durable data handling, and fast iteration with real user feedback, prioritizing workflows that removed friction from daily use.',
+      'I designed and built JoeGym as a SaaS platform that digitizes core gym operations through a centralized admin dashboard for member registration, profile updates, and membership management.\n\nI implemented membership plan handling for 1-month, 3-month, 6-month, and 1-year subscriptions with automatic expiration tracking and status transitions (Active, Expired, Deactivated) so staff could quickly identify current and inactive members.\n\nI also built a member check-in flow using QR codes or member IDs, added administrative visibility for active members, expiring plans, deactivated accounts, and daily check-ins, and deployed the system to cloud infrastructure with health monitoring endpoints for backend availability.',
     impact: [
-      'Consolidated multiple operational tasks into a single web application.',
-      'Improved day-to-day workflow speed by replacing manual coordination with a dedicated product flow.',
-      'Used direct customer feedback to refine features instead of building in isolation.',
+      'Replaced manual record-keeping with a digital system that organizes member data and automates repetitive administrative tasks.',
+      'Improved membership tracking by centralizing status, expiration windows, and check-in history for staff operations.',
+      'Delivered a browser-accessible platform usable from desktop and mobile devices, enabling more scalable day-to-day gym management.',
+    ],
+    links: [
+      {
+        label: 'Live System',
+        href: 'https://joegymfitness.com',
+      },
     ],
   },
   {
     id: '06',
-    slug: 'multithreaded-queueing-simulation',
-    category: 'SYSTEMS',
-    title: 'Multithreaded Queueing Simulation',
-    headline: 'A systems project for modeling producer-consumer behavior and concurrency tradeoffs under load.',
+    slug: 'arduino-smart-door-lock-system',
+    category: 'EMBEDDED',
+    title: 'Arduino Smart Door Lock System',
+    headline: 'Embedded access control system using keypad authentication and servo actuation.',
     summary:
-      'Built a lower-level simulation to study queueing behavior, synchronization primitives, and failure modes in concurrent systems.',
-    role: 'Systems programming project',
+      'Built an Arduino-based door lock system that authenticates users through a keypad password and controls a servo motor to lock or unlock the door.',
+    role: 'Embedded systems project',
     timeline: 'Academic / independent work',
     team: 'Solo project',
-    techStack: ['C', 'Pthreads'],
+    techStack: ['Arduino', 'Embedded C/C++', 'Microcontrollers', 'Servo Motors', 'Keypad Interfaces', 'Hardware-Software Integration'],
     image:
       'https://lh3.googleusercontent.com/aida-public/AB6AXuDQsZiVRf2isi6oFTPR-j1I7VNuvZT5lJaRiAJ64eQaHpmhVvzpmBNiFai9GcCkAIVc3__jzCpk46_2i3JKZVmPYNxSJQ1ouwtw6szIGxaP7wLUtzf3CPLrdyAruxyTgEZ-f9bCtd8uROrxUcmgbncbpt9ecrbCtTAxZBXYvDkJQx2JnPYUyabLWjdc5Avfd9L0_kL_2HXrrr4cBw6av0OCmAjAc6mZ7qzh9ThP2KyCUy4kN9Shza4hSe3RBX55QeELSYdWAEAHlfU',
     problem:
-      'I wanted a concrete way to understand how concurrent workloads behave when coordination, resource contention, and scheduling choices start to interact.',
+      'Traditional door locks rely on physical keys that can be lost or duplicated. Embedded systems provide an alternative through programmable access control built on microcontrollers and hardware components.\n\nThe challenge was to securely validate user input, actuate a physical lock mechanism, and provide clear user feedback through a lightweight hardware interface.\n\nThe solution had to run within microcontroller memory and processing limits while coordinating keypad input, display feedback, buzzer signaling, and servo control.',
     approach:
-      'Implemented producer-consumer flows with POSIX primitives, then used the simulation to reason about synchronization, deadlock prevention, throughput, and backpressure tradeoffs.',
+      'I built an Arduino-based embedded access control system that integrates keypad authentication with physical lock actuation.\n\nI implemented password-entry logic for validating predefined keypad codes, then connected a servo motor to unlock the door on successful authentication and return it to the locked state after a short delay.\n\nI also integrated display and buzzer feedback for successful and failed attempts, and wrote firmware in Arduino C/C++ to orchestrate keypad input, password checks, and GPIO-based actuator control.',
     impact: [
-      'Deepened understanding of concurrency primitives and synchronization behavior.',
-      'Created a reusable project for discussing systems fundamentals in interviews.',
-      'Turned abstract queueing and threading concepts into observable behavior under load.',
+      'Delivered a functional access-control prototype that authenticates users and controls a physical locking mechanism.',
+      'Strengthened hardware-software integration skills across microcontroller programming, keypad handling, actuator control, and feedback interfaces.',
+      'Established a foundation for future smart-security extensions such as RFID, fingerprint sensors, and IoT-based remote access.',
     ],
+    visibilityNote:
+      'Presented as a foundational embedded systems project focused on secure input handling and microcontroller-driven control flows.',
+  },
+  {
+    id: '07',
+    slug: 'social-networking-web-app',
+    category: 'FULL-STACK',
+    title: 'Social Networking Web App',
+    headline: 'A full-stack social platform for learning CRUD application architecture.',
+    summary:
+      'Built a full-stack networking web app to practice authentication, user relationships, post feeds, and end-to-end CRUD workflows.',
+    role: 'Learning project / Full-Stack Developer',
+    timeline: 'Academic / independent build',
+    team: 'Solo project',
+    techStack: ['Python', 'Django', 'SQLite', 'HTML', 'CSS', 'JavaScript', 'Web Application Architecture'],
+    image:
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuC_mrrGMwEdYFgUZYjlroP1tZK-vDfjRzWHzr2YgYJt70A0COR485SkqTUPlk1VSls4BU1VQORh9I8XKWapz7fmKumH-IbVn7HWMp6xmdtPVduw2fP6v0EXG3GHM-wnC8fRmnFa0-ZYL7ir4hl0xqRmfFiM3pTit6KV-tBhUsXgMNCVHfP7WSSf-Pu_a2lV4xrLlQhDzcykgTPUflkxL2hjPMR14XlNpCg0J6lUVme7kQlw5dKtGDj6I9b2jRz8Bxs4VavwmtskZBw',
+    problem:
+      'Social networking platforms require systems that support posts, user connections, and messaging-like interactions while keeping data organized and interfaces responsive.\n\nBuilding this kind of application requires coordinating authentication, relationship handling, content feeds, and real-time style interactions without turning the codebase into tightly coupled features.\n\nThe platform needed to support user accounts, content creation, and social interaction flows while maintaining clean boundaries between frontend and backend responsibilities.',
+    approach:
+      'I designed and implemented a full-stack social networking application centered on core CRUD workflows and extensible web architecture.\n\nI built authentication and profile management for registration, login, and user activity views, then added social interaction flows for creating posts, viewing a dynamic feed, and engaging with content from other users.\n\nI also implemented a user relationship system for following and interacting with other users, developed backend services and frontend interfaces together, and modeled persistent data for accounts, posts, and social relationships with efficient retrieval and update paths.',
+    impact: [
+      'Delivered a functional social networking application with core capabilities including authentication, content sharing, and relationship management.',
+      'Strengthened full-stack engineering skills across backend logic, frontend interaction design, and relational data modeling.',
+      'Created a practical foundation that can be extended with notifications, messaging, and recommendation features.',
+    ],
+    visibilityNote:
+      'Presented as a learning project focused on building strong CRUD and full-stack architecture fundamentals.',
+  },
+  {
+    id: '08',
+    slug: 'mail-service-web-app',
+    category: 'FULL-STACK',
+    title: 'Mail Service Web App',
+    headline: 'Web-based email platform with inbox management and client-server interactions.',
+    summary:
+      'Built a full-stack email web application inspired by Gmail that allows users to send, receive, archive, and reply to emails through a responsive browser interface.',
+    role: 'Learning project / Full-Stack Developer',
+    timeline: 'Academic / independent build',
+    team: 'Solo project',
+    techStack: ['Python', 'Django', 'JavaScript', 'HTML', 'CSS', 'SCSS', 'Bootstrap', 'REST APIs'],
+    image:
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuDPx1fF9QXl2qLrMUWcs0PV7YMF4YdmLSCNqqAU30JsqWiKS_SQbQtFnPmsjTJyWpL-S9yY1XFhR8oNlV1WwhgDOBVwTztMUktuarODpTuzMqK06VE0MO5qMlsuk-lkGmgNsLgw8HdWdbDm5zyV5KlUrqfbnnrgcprLjo5GTxYTwOLkiHg4vxJjCqqBXtFnbhdhtysy_1VRV9Z_nit6POP5zECaTYGi_tDe-bF5QvGCZuWisVkBrv_NzCC5_UPMPaF6w0RzJAZ2hjg',
+    problem:
+      'Email products must support account access, message delivery, inbox browsing, and state management while keeping interfaces responsive and easy to use. The goal for this project was to build a browser-based mail service with Gmail-like core workflows.\n\nThe application required coordination across backend data handling and frontend interactivity, including authentication, sending and viewing emails, archiving, replying, and updating views without unnecessary full page reloads.\n\nThe system also needed clean integration between a Django backend and JavaScript frontend, using API-style communication and persistent data models for core email actions.',
+    approach:
+      'I built a full-stack mail application with Django on the backend and a JavaScript-driven frontend.\n\nI designed a Django email data model covering sender, recipients, subject, body, timestamp, read state, and archived state so the system could represent the complete email lifecycle and return serialized message data to the client.\n\nI implemented fetch-based API communication for composing messages and updating mailbox state, delivered key workflows including registration, login, inbox browsing, email detail views, archive/unarchive actions, and reply flows, and built responsive mailbox interfaces using HTML, CSS, SCSS, and Bootstrap.',
+    impact: [
+      'Delivered a functional email platform covering core user flows including authentication, mailbox navigation, composition, and message state management.',
+      'Strengthened end-to-end full-stack experience across backend models, API-style interactions, dynamic frontend state updates, and responsive interface implementation.',
+      'Established an extensible foundation for additional inbox features such as starred and important message views.',
+    ],
+    visibilityNote:
+      'Presented as a learning project focused on full-stack web architecture, CRUD patterns, and client-server integration.',
+  },
+  {
+    id: '09',
+    slug: 'online-auction-platform',
+    category: 'FULL-STACK',
+    title: 'Online Auction Platform',
+    headline: 'Web-based marketplace for creating listings and bidding on items.',
+    summary:
+      'Built a full-stack online auction platform that allows users to create listings, place bids, manage watchlists, and participate in marketplace interactions.',
+    role: 'Learning project / Full-Stack Developer',
+    timeline: 'Academic / independent build',
+    team: 'Solo project',
+    techStack: ['Python', 'Django', 'JavaScript', 'HTML', 'CSS', 'SQLite', 'Web Application Architecture'],
+    image:
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuA45TvKrHM2enxvjc5UjgKSnLieHivlrw7gzXPWiLEAzJwOz7pe5J9vtuMglMTWCfpEBtKFjl9XmK08hXOU_QJSiKdXWItDB4SKbIGPWrlP8FDpxA0TR-E-Z1y8IqFe73kBVKWrNHJVJTA2MW88IdnsujCsygKGiKQQh6836P6xBarRgJnjs4c5t3BxaUoARjA5hfTNZtPI4h4W29lZU5Br0MPg00sm62xsGmGvHYFzNINVUrkabjMhqZc2q-whgNyZ7z-wGbQhPCQ',
+    problem:
+      'Online marketplaces require reliable systems for item listings, bidding, auction status, and pricing updates while maintaining fair bidding behavior and accurate state transitions.\n\nThe core challenge was coordinating authentication, listing creation, bidding validation, and dynamic auction price updates without breaking data consistency.\n\nThe platform needed to support multiple users interacting with listings concurrently while ensuring bids were validated correctly and the highest bid remained the canonical listing price.',
+    approach:
+      'I developed a full-stack auction web application centered on listing workflows and interactive bidding behavior.\n\nI implemented listing creation and management for title, description, starting price, and category, then built bid validation logic to require each new bid to exceed the current highest bid and automatically update listing state.\n\nI also added authenticated account flows for registration and login, a user watchlist system for tracking items of interest, and auction lifecycle controls that allow listing owners to close auctions and determine winners based on the highest valid bid.',
+    impact: [
+      'Delivered a functional online auction product with core workflows including listing creation, bidding, watchlists, and auction completion.',
+      'Strengthened full-stack development experience across backend business logic, relational data modeling, and dynamic frontend interaction patterns.',
+      'Established a foundation for future marketplace extensions such as notifications, payment integration, and real-time bidding updates.',
+    ],
+    visibilityNote:
+      'Presented as a learning project focused on full-stack marketplace architecture and CRUD-driven workflow design.',
+  },
+  {
+    id: '10',
+    slug: 'wiki-knowledge-base-platform',
+    category: 'FULL-STACK',
+    title: 'Wiki Knowledge Base Platform',
+    headline: 'Collaborative encyclopedia-style web application.',
+    summary:
+      'Built a web-based wiki platform that allows users to create, edit, search, and manage knowledge articles through a structured content system.',
+    role: 'Learning project / Full-Stack Developer',
+    timeline: 'Academic / independent build',
+    team: 'Solo project',
+    techStack: ['Python', 'Django', 'HTML', 'CSS', 'JavaScript', 'Web Application Architecture'],
+    image:
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuA_9YAlhi1-JfDB8JMXLN-K7J7maqaPz4k0z81yj18511QUGpQlm5YAgS9YjV4NdKpErDFCa26Vz10gU7_UK2T5JUE8cAO3Rzv-AzaaH_sQ221C54Ht9tZgHFOcIuRulxlYZO-6DWAIvH3je0YmPbd_qoU7by0YuT8VZ1-8n4XyXiXgEeJZgGRxJQOI2rVY1haqCB2InHUm97IXkPovekRJxr5orMf4dHr2KLRBAY9TfN_-qSbQipUVtNW3FpJYjdGJtYyEmKmXMZI',
+    problem:
+      'Knowledge-base platforms need structured systems for creating, editing, and retrieving content so information remains organized and easy to navigate.\n\nBuilding a wiki experience requires handling article creation and editing workflows, search functionality, and article-level navigation while maintaining consistent formatting and reliable storage.\n\nThe system needed to support dynamic article rendering, page editing, and efficient search within a simple architecture that remains maintainable as content grows.',
+    approach:
+      'I built a web-based wiki application focused on collaborative content authoring and structured knowledge management.\n\nI implemented article management workflows for creating, editing, and viewing encyclopedia-style entries, with stored content rendered dynamically into readable pages.\n\nI also added search and navigation for keyword-based article discovery, and used Django across backend modeling, request handling, and template rendering within an MTv architecture to keep logic and presentation cleanly organized.',
+    impact: [
+      'Delivered a functional wiki platform with core workflows including article creation, editing, search, and navigation.',
+      'Enabled structured content management for documentation-style use cases and collaborative knowledge sharing.',
+      'Strengthened full-stack experience building database-backed applications with dynamic rendering and interactive user flows.',
+    ],
+    visibilityNote:
+      'Presented as a learning project focused on full-stack content systems and CRUD-oriented web architecture.',
   },
 ];
 
