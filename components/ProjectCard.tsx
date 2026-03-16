@@ -35,6 +35,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             className="w-full h-full object-cover grayscale-img group-hover:scale-105 group-hover:opacity-90 transition-all duration-500"
           />
         </div>
+
         <div className="p-5">
           <div className="flex items-center justify-between mb-3 gap-3">
             <span className="text-[9px] font-mono text-white/40 tracking-widest uppercase">

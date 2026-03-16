@@ -123,7 +123,7 @@ export default function PortfolioCaseStudyModal({ project }: PortfolioCaseStudyM
                     alt={project.title}
                     width={1200}
                     height={600}
-                    className="h-full w-full object-cover grayscale-img"
+                    className="h-full w-full object-contain bg-[#0a0a0a] p-3 grayscale-img"
                   />
                 </div>
               </div>

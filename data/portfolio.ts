@@ -35,8 +35,7 @@ export const projects: ProjectCaseStudy[] = [
     timeline: 'Summer 2025',
     team: 'LinkedIn ads infrastructure internship project',
     techStack: ['Java', 'Scala', 'Spark', 'Couchbase', 'Trino/Presto', 'Hadoop'],
-    image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDPx1fF9QXl2qLrMUWcs0PV7YMF4YdmLSCNqqAU30JsqWiKS_SQbQtFnPmsjTJyWpL-S9yY1XFhR8oNlV1WwhgDOBVwTztMUktuarODpTuzMqK06VE0MO5qMlsuk-lkGmgNsLgw8HdWdbDm5zyV5KlUrqfbnnrgcprLjo5GTxYTwOLkiHg4vxJjCqqBXtFnbhdhtysy_1VRV9Z_nit6POP5zECaTYGi_tDe-bF5QvGCZuWisVkBrv_NzCC5_UPMPaF6w0RzJAZ2hjg',
+    image: '/images/soft-fcap.png',
     problem:
       'As advertisers gained the ability to define custom frequency cap rules for Brand Awareness campaigns, reliable enforcement became much more important.\n\nThe main challenge was that RTB requests and impressions were separated by roughly two minutes, while Connected TV traffic could burst for the same user within milliseconds, allowing multiple requests to arrive before the previous exposure was recorded.\n\nThe solution had to prevent duplicate ad delivery without violating the latency requirements of a high-throughput real-time bidding system.',
     approach:
@@ -62,8 +61,7 @@ export const projects: ProjectCaseStudy[] = [
     timeline: 'Winter 2025',
     team: 'Datadog Proposals Platform internship project',
     techStack: ['Go', 'gRPC', 'Distributed Config', 'Feature Flags', 'E2E Testing'],
-    image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuA45TvKrHM2enxvjc5UjgKSnLieHivlrw7gzXPWiLEAzJwOz7pe5J9vtuMglMTWCfpEBtKFjl9XmK08hXOU_QJSiKdXWItDB4SKbIGPWrlP8FDpxA0TR-E-Z1y8IqFe73kBVKWrNHJVJTA2MW88IdnsujCsygKGiKQQh6836P6xBarRgJnjs4c5t3BxaUoARjA5hfTNZtPI4h4W29lZU5Br0MPg00sm62xsGmGvHYFzNINVUrkabjMhqZc2q-whgNyZ7z-wGbQhPCQ',
+    image: '/images/domain-config.png',
     problem:
       'Internal services depended on manual configuration changes whenever teams needed new data access or feature enablement.\n\nEven simple requests required editing YAML files, opening pull requests, waiting on CI/CD, and redeploying services, which created friction across teams and slowed feature rollout.\n\nThe replacement system still needed to support safe approvals, reusable configuration patterns, and service-specific overrides where defaults were not enough.',
     approach:
@@ -88,8 +86,7 @@ export const projects: ProjectCaseStudy[] = [
     timeline: 'Winter 2025',
     team: 'Datadog Proposals Platform internship project',
     techStack: ['Node.js', 'TypeScript', 'GraphQL', 'GraphQL Mesh', 'API Gateway', 'Observability'],
-    image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuA45TvKrHM2enxvjc5UjgKSnLieHivlrw7gzXPWiLEAzJwOz7pe5J9vtuMglMTWCfpEBtKFjl9XmK08hXOU_QJSiKdXWItDB4SKbIGPWrlP8FDpxA0TR-E-Z1y8IqFe73kBVKWrNHJVJTA2MW88IdnsujCsygKGiKQQh6836P6xBarRgJnjs4c5t3BxaUoARjA5hfTNZtPI4h4W29lZU5Br0MPg00sm62xsGmGvHYFzNINVUrkabjMhqZc2q-whgNyZ7z-wGbQhPCQ',
+    image: '/images/graphql-versioning.png',
     problem:
       'The Graph Gateway acts as a middle layer between backend services and frontend applications, stitching together OpenAPI, gRPC, and GraphQL APIs into one unified GraphQL interface.\n\nBecause the gateway exposed unversioned APIs, backend changes could unintentionally break frontend applications, which increased coordination cost and slowed down safe API evolution.\n\nThe system needed to preserve backward compatibility, allow multiple API versions to coexist, and let frontend teams migrate gradually without disrupting existing services.',
     approach:
@@ -115,8 +112,7 @@ export const projects: ProjectCaseStudy[] = [
     timeline: 'Summer 2024',
     team: 'LinkedIn ads product internship project',
     techStack: ['Java', 'Ember.js', 'Rest.li', 'Real-Time Rendering', 'Ads Infrastructure'],
-    image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuC_mrrGMwEdYFgUZYjlroP1tZK-vDfjRzWHzr2YgYJt70A0COR485SkqTUPlk1VSls4BU1VQORh9I8XKWapz7fmKumH-IbVn7HWMp6xmdtPVduw2fP6v0EXG3GHM-wnC8fRmnFa0-ZYL7ir4hl0xqRmfFiM3pTit6KV-tBhUsXgMNCVHfP7WSSf-Pu_a2lV4xrLlQhDzcykgTPUflkxL2hjPMR14XlNpCg0J6lUVme7kQlw5dKtGDj6I9b2jRz8Bxs4VavwmtskZBw',
+    image: '/images/document-live-preview.gif',
     problem:
       'Advertisers creating document ads relied on a preview workflow that was not truly real time.\n\nThey had to save the ad, wait for a backend service to retrieve and render the component, and then wait again for additional processing before seeing the result. In practice, preview rendering or updating could take around 4.2 seconds, which made iteration slow and frustrating.\n\nThe system also lacked default preview values, so users could not immediately visualize how the ad would appear. Any replacement needed to deliver instant feedback while still integrating with the existing rendering and ad-serving infrastructure.',
     approach:
@@ -142,8 +138,7 @@ export const projects: ProjectCaseStudy[] = [
     timeline: 'Independent build',
     team: 'Solo build with direct user feedback',
     techStack: ['Node.js', 'Express', 'PostgreSQL', 'Prisma', 'React', 'Cloud Deployment'],
-    image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuA_9YAlhi1-JfDB8JMXLN-K7J7maqaPz4k0z81yj18511QUGpQlm5YAgS9YjV4NdKpErDFCa26Vz10gU7_UK2T5JUE8cAO3Rzv-AzaaH_sQ221C54Ht9tZgHFOcIuRulxlYZO-6DWAIvH3je0YmPbd_qoU7by0YuT8VZ1-8n4XyXiXgEeJZgGRxJQOI2rVY1haqCB2InHUm97IXkPovekRJxr5orMf4dHr2KLRBAY9TfN_-qSbQipUVtNW3FpJYjdGJtYyEmKmXMZI',
+    image: '/images/joe-gym.gif',
     problem:
       'Many small gyms still manage members using paper forms, spreadsheets, or manual logs. This creates operational friction when handling sign-ups, renewals, check-ins, and membership tracking.\n\nManual workflows make errors more likely and become harder to manage as a gym grows. Staff must repeatedly track expiration dates, update member records, and validate attendance without a centralized system.\n\nThe platform needed to stay simple for front-desk staff, work across multiple devices, and reliably support daily workflows like registration, renewals, and check-ins.',
     approach:
@@ -172,8 +167,7 @@ export const projects: ProjectCaseStudy[] = [
     timeline: 'Academic / independent work',
     team: 'Solo project',
     techStack: ['Arduino', 'Embedded C/C++', 'Microcontrollers', 'Servo Motors', 'Keypad Interfaces', 'Hardware-Software Integration'],
-    image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDQsZiVRf2isi6oFTPR-j1I7VNuvZT5lJaRiAJ64eQaHpmhVvzpmBNiFai9GcCkAIVc3__jzCpk46_2i3JKZVmPYNxSJQ1ouwtw6szIGxaP7wLUtzf3CPLrdyAruxyTgEZ-f9bCtd8uROrxUcmgbncbpt9ecrbCtTAxZBXYvDkJQx2JnPYUyabLWjdc5Avfd9L0_kL_2HXrrr4cBw6av0OCmAjAc6mZ7qzh9ThP2KyCUy4kN9Shza4hSe3RBX55QeELSYdWAEAHlfU',
+    image: '/images/door-lock-system.gif',
     problem:
       'Traditional door locks rely on physical keys that can be lost or duplicated. Embedded systems provide an alternative through programmable access control built on microcontrollers and hardware components.\n\nThe challenge was to securely validate user input, actuate a physical lock mechanism, and provide clear user feedback through a lightweight hardware interface.\n\nThe solution had to run within microcontroller memory and processing limits while coordinating keypad input, display feedback, buzzer signaling, and servo control.',
     approach:
@@ -198,8 +192,7 @@ export const projects: ProjectCaseStudy[] = [
     timeline: 'Academic / independent build',
     team: 'Solo project',
     techStack: ['Python', 'Django', 'SQLite', 'HTML', 'CSS', 'JavaScript', 'Web Application Architecture'],
-    image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuC_mrrGMwEdYFgUZYjlroP1tZK-vDfjRzWHzr2YgYJt70A0COR485SkqTUPlk1VSls4BU1VQORh9I8XKWapz7fmKumH-IbVn7HWMp6xmdtPVduw2fP6v0EXG3GHM-wnC8fRmnFa0-ZYL7ir4hl0xqRmfFiM3pTit6KV-tBhUsXgMNCVHfP7WSSf-Pu_a2lV4xrLlQhDzcykgTPUflkxL2hjPMR14XlNpCg0J6lUVme7kQlw5dKtGDj6I9b2jRz8Bxs4VavwmtskZBw',
+    image: '/images/social.gif',
     problem:
       'Social networking platforms require systems that support posts, user connections, and messaging-like interactions while keeping data organized and interfaces responsive.\n\nBuilding this kind of application requires coordinating authentication, relationship handling, content feeds, and real-time style interactions without turning the codebase into tightly coupled features.\n\nThe platform needed to support user accounts, content creation, and social interaction flows while maintaining clean boundaries between frontend and backend responsibilities.',
     approach:
@@ -224,8 +217,7 @@ export const projects: ProjectCaseStudy[] = [
     timeline: 'Academic / independent build',
     team: 'Solo project',
     techStack: ['Python', 'Django', 'JavaScript', 'HTML', 'CSS', 'SCSS', 'Bootstrap', 'REST APIs'],
-    image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDPx1fF9QXl2qLrMUWcs0PV7YMF4YdmLSCNqqAU30JsqWiKS_SQbQtFnPmsjTJyWpL-S9yY1XFhR8oNlV1WwhgDOBVwTztMUktuarODpTuzMqK06VE0MO5qMlsuk-lkGmgNsLgw8HdWdbDm5zyV5KlUrqfbnnrgcprLjo5GTxYTwOLkiHg4vxJjCqqBXtFnbhdhtysy_1VRV9Z_nit6POP5zECaTYGi_tDe-bF5QvGCZuWisVkBrv_NzCC5_UPMPaF6w0RzJAZ2hjg',
+    image: '/images/mail.gif',
     problem:
       'Email products must support account access, message delivery, inbox browsing, and state management while keeping interfaces responsive and easy to use. The goal for this project was to build a browser-based mail service with Gmail-like core workflows.\n\nThe application required coordination across backend data handling and frontend interactivity, including authentication, sending and viewing emails, archiving, replying, and updating views without unnecessary full page reloads.\n\nThe system also needed clean integration between a Django backend and JavaScript frontend, using API-style communication and persistent data models for core email actions.',
     approach:
@@ -250,8 +242,7 @@ export const projects: ProjectCaseStudy[] = [
     timeline: 'Academic / independent build',
     team: 'Solo project',
     techStack: ['Python', 'Django', 'JavaScript', 'HTML', 'CSS', 'SQLite', 'Web Application Architecture'],
-    image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuA45TvKrHM2enxvjc5UjgKSnLieHivlrw7gzXPWiLEAzJwOz7pe5J9vtuMglMTWCfpEBtKFjl9XmK08hXOU_QJSiKdXWItDB4SKbIGPWrlP8FDpxA0TR-E-Z1y8IqFe73kBVKWrNHJVJTA2MW88IdnsujCsygKGiKQQh6836P6xBarRgJnjs4c5t3BxaUoARjA5hfTNZtPI4h4W29lZU5Br0MPg00sm62xsGmGvHYFzNINVUrkabjMhqZc2q-whgNyZ7z-wGbQhPCQ',
+    image: '/images/auctions.gif',
     problem:
       'Online marketplaces require reliable systems for item listings, bidding, auction status, and pricing updates while maintaining fair bidding behavior and accurate state transitions.\n\nThe core challenge was coordinating authentication, listing creation, bidding validation, and dynamic auction price updates without breaking data consistency.\n\nThe platform needed to support multiple users interacting with listings concurrently while ensuring bids were validated correctly and the highest bid remained the canonical listing price.',
     approach:
@@ -276,8 +267,7 @@ export const projects: ProjectCaseStudy[] = [
     timeline: 'Academic / independent build',
     team: 'Solo project',
     techStack: ['Python', 'Django', 'HTML', 'CSS', 'JavaScript', 'Web Application Architecture'],
-    image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuA_9YAlhi1-JfDB8JMXLN-K7J7maqaPz4k0z81yj18511QUGpQlm5YAgS9YjV4NdKpErDFCa26Vz10gU7_UK2T5JUE8cAO3Rzv-AzaaH_sQ221C54Ht9tZgHFOcIuRulxlYZO-6DWAIvH3je0YmPbd_qoU7by0YuT8VZ1-8n4XyXiXgEeJZgGRxJQOI2rVY1haqCB2InHUm97IXkPovekRJxr5orMf4dHr2KLRBAY9TfN_-qSbQipUVtNW3FpJYjdGJtYyEmKmXMZI',
+    image: '/images/wiki.gif',
     problem:
       'Knowledge-base platforms need structured systems for creating, editing, and retrieving content so information remains organized and easy to navigate.\n\nBuilding a wiki experience requires handling article creation and editing workflows, search functionality, and article-level navigation while maintaining consistent formatting and reliable storage.\n\nThe system needed to support dynamic article rendering, page editing, and efficient search within a simple architecture that remains maintainable as content grows.',
     approach:
