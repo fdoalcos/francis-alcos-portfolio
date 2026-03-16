@@ -1,5 +1,5 @@
 ---
-title: First blog post in this website
+title: First post in this website
 date: 2026-03-11
 excerpt: hola!
 tags: writing
