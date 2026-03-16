@@ -18,7 +18,6 @@ export interface ProjectCaseStudy {
   problem: string;
   approach: string;
   impact: string[];
-  visibilityNote?: string;
   links?: ProjectLink[];
 }
 
@@ -46,8 +45,6 @@ export const projects: ProjectCaseStudy[] = [
       'Reduced impressions by 2.58% and revenue by 0.52%, making the enforcement trade-off explicit and measurable.',
       'Proposed a follow-up bid-validation approach that would fall through to the next eligible bid instead of rejecting the request entirely, preserving valid ad opportunities while maintaining compliance.',
     ],
-    visibilityNote:
-      'Shared at the systems and outcome level, with implementation details limited to public-safe architecture and production metrics.',
   },
   {
     id: '02',
@@ -71,8 +68,6 @@ export const projects: ProjectCaseStudy[] = [
       'Enabled reusable shared configuration templates across services while still supporting custom overrides when needed.',
       'Improved developer velocity by reducing manual operational steps and automating approval-driven configuration deployment.',
     ],
-    visibilityNote:
-      'Framed at the infrastructure and workflow level to stay within public-safe implementation boundaries.',
   },
   {
     id: '03',
@@ -97,8 +92,6 @@ export const projects: ProjectCaseStudy[] = [
       'Improved observability by tracking active API-version usage and identifying outdated integrations for migration.',
       'Delivered the core functionality in 8.5 weeks, then extended adoption through documentation, migration support, improvements, and an internal presentation.',
     ],
-    visibilityNote:
-      'Described at the gateway architecture and migration-workflow level to stay within public-safe implementation boundaries.',
   },
   {
     id: '04',
@@ -123,8 +116,6 @@ export const projects: ProjectCaseStudy[] = [
       'Affected a workflow generating approximately $6 million in weekly revenue, or about $312 million annually.',
       'After ramping the feature to 100%, weekly ad creation increased to about 40,000 ads, generating roughly $6.5 million in revenue during that week.',
     ],
-    visibilityNote:
-      'Presented at the product workflow and performance-impact level to stay within public-safe implementation boundaries.',
   },
   {
     id: '05',
@@ -177,8 +168,12 @@ export const projects: ProjectCaseStudy[] = [
       'Strengthened hardware-software integration skills across microcontroller programming, keypad handling, actuator control, and feedback interfaces.',
       'Established a foundation for future smart-security extensions such as RFID, fingerprint sensors, and IoT-based remote access.',
     ],
-    visibilityNote:
-      'Presented as a foundational embedded systems project focused on secure input handling and microcontroller-driven control flows.',
+    links: [
+      {
+        label: 'GitHub Repo',
+        href: 'https://github.com/fdoalcos/door-lock-system-arduino',
+      },
+    ],
   },
   {
     id: '07',
@@ -202,8 +197,6 @@ export const projects: ProjectCaseStudy[] = [
       'Strengthened full-stack engineering skills across backend logic, frontend interaction design, and relational data modeling.',
       'Created a practical foundation that can be extended with notifications, messaging, and recommendation features.',
     ],
-    visibilityNote:
-      'Presented as a learning project focused on building strong CRUD and full-stack architecture fundamentals.',
   },
   {
     id: '08',
@@ -227,8 +220,12 @@ export const projects: ProjectCaseStudy[] = [
       'Strengthened end-to-end full-stack experience across backend models, API-style interactions, dynamic frontend state updates, and responsive interface implementation.',
       'Established an extensible foundation for additional inbox features such as starred and important message views.',
     ],
-    visibilityNote:
-      'Presented as a learning project focused on full-stack web architecture, CRUD patterns, and client-server integration.',
+    links: [
+      {
+        label: 'GitHub Repo',
+        href: 'https://github.com/fdoalcos/Mail',
+      },
+    ],
   },
   {
     id: '09',
@@ -252,8 +249,12 @@ export const projects: ProjectCaseStudy[] = [
       'Strengthened full-stack development experience across backend business logic, relational data modeling, and dynamic frontend interaction patterns.',
       'Established a foundation for future marketplace extensions such as notifications, payment integration, and real-time bidding updates.',
     ],
-    visibilityNote:
-      'Presented as a learning project focused on full-stack marketplace architecture and CRUD-driven workflow design.',
+    links: [
+      {
+        label: 'GitHub Repo',
+        href: 'https://github.com/fdoalcos/auction',
+      },
+    ],
   },
   {
     id: '10',
@@ -277,8 +278,12 @@ export const projects: ProjectCaseStudy[] = [
       'Enabled structured content management for documentation-style use cases and collaborative knowledge sharing.',
       'Strengthened full-stack experience building database-backed applications with dynamic rendering and interactive user flows.',
     ],
-    visibilityNote:
-      'Presented as a learning project focused on full-stack content systems and CRUD-oriented web architecture.',
+    links: [
+      {
+        label: 'GitHub Repo',
+        href: 'https://github.com/fdoalcos/Wiki',
+      },
+    ],
   },
 ];
 

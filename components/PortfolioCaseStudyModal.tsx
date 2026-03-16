@@ -209,15 +209,6 @@ export default function PortfolioCaseStudyModal({ project }: PortfolioCaseStudyM
                 </dl>
               </div>
 
-              {project.visibilityNote ? (
-                <div className="border border-white/10 p-5">
-                  <p className="mb-2 text-[11px] font-mono uppercase tracking-[0.3em] text-zinc-500">
-                    Visibility Note
-                  </p>
-                  <p className="text-sm leading-6 text-zinc-400">{project.visibilityNote}</p>
-                </div>
-              ) : null}
-
               {project.links?.length ? (
                 <div className="border border-white/10 p-5">
                   <p className="mb-4 text-[11px] font-mono uppercase tracking-[0.3em] text-zinc-500">
