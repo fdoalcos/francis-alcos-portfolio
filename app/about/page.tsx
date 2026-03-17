@@ -16,14 +16,10 @@ export default function About() {
             </div>
             <div className="space-y-12">
               <p className="text-zinc-400 text-xl md:text-2xl leading-relaxed font-medium max-w-2xl">
-                I am a software engineer driven by deep curiosity and architectural precision. I enjoy learning how
-                complex systems work from the ground up, focusing on the beauty of efficient backends, the resilience
-                of distributed systems, and the absolute necessity of reliability.
+		I'm an engineer and builder driven by curiosity and imagination. In engineering, I focus on building and scaling systems, especially large-scale infrastructure and product development. I'm deeply curious about how and why systems are built, and I enjoy continously learning and improving.
               </p>
               <p className="text-zinc-400 text-xl md:text-2xl leading-relaxed font-medium max-w-2xl">
-                Outside of the terminal, this discipline translates into endurance. As a triathlete and ultra-marathoner,
-                I find parity between long-form code optimization and hundred-mile trails. Both require a calm mind,
-                sustained output, and a deep respect for the mechanics of a high-performance system.
+		Outside, of engineering, I enjoy reading about topics that pique my intrests, such as self-improvement, finance, and sports. I'm also actively training as a triathlete, pushing my limits both physically and mentally, as I believe that you can't make an impact on the world without first making an impact on yourself.
               </p>
             </div>
           </div>
@@ -39,7 +35,7 @@ export default function About() {
                     <div className="w-2.5 h-2.5 rounded-full bg-zinc-900"></div>
                   </div>
                   <span className="font-mono text-[9px] uppercase tracking-[0.3em] text-zinc-500">
-                    PROFILE.ENGINEER_SPEC v1.0.0
+			Francis Dominic O. Alcos
                   </span>
                 </div>
 
@@ -49,7 +45,7 @@ export default function About() {
                       <span className="w-1.5 h-1.5 bg-white"></span> ROLE
                     </span>
                     <p className="text-[13px] text-zinc-400 pl-4 border-l border-zinc-800">
-                      Backend Infrastructure Engineer
+			Engineer and builder
                     </p>
                   </div>
 
@@ -61,7 +57,6 @@ export default function About() {
                       <li>Backend Systems</li>
                       <li>Distributed Infrastructure</li>
                       <li>Data-Intensive Applications</li>
-                      <li>Performance Optimization</li>
                     </ul>
                   </div>
 
@@ -81,9 +76,9 @@ export default function About() {
                       <span className="w-1.5 h-1.5 bg-white"></span> OFF-CLOCK
                     </span>
                     <ul className="text-[12px] text-zinc-400 pl-4 space-y-1.5 list-none border-l border-zinc-800">
-                      <li>Endurance running</li>
-                      <li>Strength progression</li>
-                      <li>Reading &amp; reflection</li>
+                      <li>Training as a triathlete</li>
+                      <li>Building endurance and strength</li>
+                      <li>Reading, reflecting, and improving</li>
                     </ul>
                   </div>
 

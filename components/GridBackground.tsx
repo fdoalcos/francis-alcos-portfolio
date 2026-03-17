@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react';
 
 const GRID = 48;
 
-type Mode = 'tight' | 'nodes' | 'diffuse' | 'wave';
+type Mode = 'tight' | 'nodes' | 'diffuse' | 'wave' | 'center';
 
 interface GridBackgroundProps {
   mode?: Mode;
@@ -178,6 +178,9 @@ export default function GridBackground({ mode = 'tight' }: GridBackgroundProps) 
     const dRadius = 200;
     const dMaxOp  = 0.42;
 
+    // ── Mode E: center ─────────────────────────────────────────────
+    let cT = 0;
+
     // ── Mode D: wave ───────────────────────────────────────────────
     let bandX = -300;
     const bandWidth = 150;
@@ -277,6 +280,41 @@ export default function GridBackground({ mode = 'tight' }: GridBackgroundProps) 
           ctx.beginPath();
           ctx.moveTo(0, ly);
           ctx.lineTo(w, ly);
+          ctx.stroke();
+        }
+      }
+
+      else if (mode === 'center') {
+        cT += 0.006;
+        const cx = w / 2;
+        const cy = h / 2;
+        const maxDistX = w / 2;
+        const maxDistY = h / 2;
+        const pulse = 0.7 + 0.3 * Math.sin(cT);
+        const baseOp = 0.03;
+        const glowOp = 0.18 * pulse;
+
+        const x1 = Math.ceil(w / GRID) * GRID;
+        const y1 = Math.ceil(h / GRID) * GRID;
+        ctx.lineWidth = 1;
+
+        for (let ly = 0; ly <= y1; ly += GRID) {
+          const t = 1 - Math.abs(ly - cy) / maxDistY;
+          const fade = baseOp + glowOp * t * t;
+          ctx.strokeStyle = `rgba(255,255,255,${fade})`;
+          ctx.beginPath();
+          ctx.moveTo(0, ly);
+          ctx.lineTo(w, ly);
+          ctx.stroke();
+        }
+
+        for (let lx = 0; lx <= x1; lx += GRID) {
+          const t = 1 - Math.abs(lx - cx) / maxDistX;
+          const fade = baseOp + glowOp * t * t;
+          ctx.strokeStyle = `rgba(255,255,255,${fade})`;
+          ctx.beginPath();
+          ctx.moveTo(lx, 0);
+          ctx.lineTo(lx, h);
           ctx.stroke();
         }
       }
